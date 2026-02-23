@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Project FIRA — Fire Incident Reporting Application with CNN image validation and real-time Google Maps dashboard by JAE Collective." />
+  <title>Project FIRA | JAE Collective</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════════════ -->
+  <nav class="navbar navbar-jae navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/jae-logo.png" alt="JAE Collective Logo" class="brand-logo"
+             onerror="this.style.display='none'">
+        <span class="brand-wordmark">JAE <span>Collective</span></span>
+      </a>
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navMenu"
+              aria-controls="navMenu" aria-expanded="false">
+        <i class="bi bi-list" style="font-size:1.4rem;color:var(--primary);"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-1 align-items-lg-center py-3 py-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="index.html#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn-jae-primary" href="index.html#contact"
+               style="padding:10px 24px;font-size:0.82rem;">
+              Get in Touch
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════
+       PROJECT HERO
+  ══════════════════════════════════════════════ -->
+  <section class="project-hero">
+    <div class="container" style="position:relative;z-index:2;">
+
+      <a href="index.html#projects" class="back-link">
+        <i class="bi bi-arrow-left"></i> Back to Portfolio
+      </a>
+
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <span class="project-hero-label">&#9670; Web &amp; Mobile Application</span>
+          <h1 class="project-hero-title">Project FIRA</h1>
+          <p class="project-hero-sub">
+            Fire Incident Reporting &amp; Analysis — a smart platform combining mobile
+            reporting, AI-powered image validation, and live map intelligence.
+          </p>
+
+          <!-- Meta chips -->
+          <div class="d-flex flex-wrap gap-2 mt-4">
+            <span class="tech-pill" style="background:rgba(45,212,191,0.12);border-color:rgba(45,212,191,0.3);color:var(--accent);">
+              <i class="bi bi-phone" style="color:var(--accent);"></i> Mobile App
+            </span>
+            <span class="tech-pill" style="background:rgba(45,212,191,0.12);border-color:rgba(45,212,191,0.3);color:var(--accent);">
+              <i class="bi bi-cpu" style="color:var(--accent);"></i> CNN / AI
+            </span>
+            <span class="tech-pill" style="background:rgba(45,212,191,0.12);border-color:rgba(45,212,191,0.3);color:var(--accent);">
+              <i class="bi bi-geo-alt" style="color:var(--accent);"></i> Google Maps
+            </span>
+          </div>
+        </div>
+
+        <!-- Right decoration -->
+        <div class="col-lg-4 offset-lg-1 d-none d-lg-block text-end">
+          <svg width="220" height="220" viewBox="0 0 220 220" fill="none"
+               style="opacity:0.18;animation:floatHex 8s ease-in-out infinite;">
+            <polygon points="110,12 208,62 208,158 110,208 12,158 12,62"
+                     stroke="#2DD4BF" stroke-width="2" fill="rgba(45,212,191,0.1)"/>
+            <polygon points="110,42 180,80 180,140 110,178 40,140 40,80"
+                     stroke="#2DD4BF" stroke-width="1.5" fill="rgba(45,212,191,0.06)"/>
+            <text x="110" y="118" text-anchor="middle"
+                  font-family="Montserrat,sans-serif" font-size="28" font-weight="900"
+                  fill="#2DD4BF">FIRA</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       PROJECT SCREENSHOT CAROUSEL
+  ══════════════════════════════════════════════ -->
+  <div style="background:var(--light-bg); padding-bottom: 8px;">
+    <div class="container">
+      <div class="browser-frame-wrap">
+
+        <!-- Browser chrome bar -->
+        <div class="browser-chrome">
+          <div class="browser-dots">
+            <span class="b-dot b-dot-red"></span>
+            <span class="b-dot b-dot-yellow"></span>
+            <span class="b-dot b-dot-green"></span>
+          </div>
+          <div class="browser-address-bar">
+            <i class="bi bi-lock-fill"></i>
+            fira-app.vercel.app
+          </div>
+          <div style="width:60px; flex-shrink:0;"></div>
+        </div>
+
+        <!-- Carousel -->
+        <div id="firaCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4500">
+
+          <!-- Indicators -->
+          <div class="carousel-indicators carousel-indicators-jae">
+            <button type="button" data-bs-target="#firaCarousel" data-bs-slide-to="0"
+                    class="active" aria-current="true" aria-label="Screenshot 1"></button>
+            <button type="button" data-bs-target="#firaCarousel" data-bs-slide-to="1"
+                    aria-label="Screenshot 2"></button>
+            <button type="button" data-bs-target="#firaCarousel" data-bs-slide-to="2"
+                    aria-label="Screenshot 3"></button>
+          </div>
+
+          <!-- Slides -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="images/fira-1.png" class="d-block w-100" alt="FIRA Screenshot 1"
+                   onerror="this.src='https://placehold.co/1200x675/1A2530/2DD4BF?text=FIRA+Screenshot+1&font=montserrat'" />
+            </div>
+            <div class="carousel-item">
+              <img src="images/fira-2.png" class="d-block w-100" alt="FIRA Screenshot 2"
+                   onerror="this.src='https://placehold.co/1200x675/1A2530/2DD4BF?text=FIRA+Screenshot+2&font=montserrat'" />
+            </div>
+            <div class="carousel-item">
+              <img src="images/fira-3.png" class="d-block w-100" alt="FIRA Screenshot 3"
+                   onerror="this.src='https://placehold.co/1200x675/1A2530/2DD4BF?text=FIRA+Screenshot+3&font=montserrat'" />
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <button class="jae-carousel-btn jae-prev" type="button"
+                  data-bs-target="#firaCarousel" data-bs-slide="prev" aria-label="Previous">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+          <button class="jae-carousel-btn jae-next" type="button"
+                  data-bs-target="#firaCarousel" data-bs-slide="next" aria-label="Next">
+            <i class="bi bi-chevron-right"></i>
+          </button>
+
+        </div><!-- /carousel -->
+      </div><!-- /browser-frame-wrap -->
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       PROJECT DETAILS
+  ══════════════════════════════════════════════ -->
+  <section class="project-detail-section" style="background:var(--light-bg);">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- Main Description -->
+        <div class="col-lg-8 fade-up">
+          <div class="detail-card h-100">
+            <h3>Project Overview</h3>
+            <p>
+              Project FIRA (Fire Incident Reporting and Analysis) is a comprehensive web
+              and mobile application designed to modernize fire incident reporting for
+              citizens and fire response units alike. The system enables individuals to
+              submit real-time fire incident reports directly from their mobile devices,
+              including photographic evidence of the incident.
+            </p>
+            <br/>
+            <p>
+              At the core of the platform is a <strong>Convolutional Neural Network (CNN)</strong>
+              -based likelihood model that automatically validates submitted images — determining
+              whether the photo genuinely depicts a fire incident. This intelligent validation
+              layer significantly reduces false reports and ensures only credible data reaches
+              emergency responders.
+            </p>
+            <br/>
+            <p>
+              Validated incidents are then visualized on a <strong>real-time Google Maps
+              dashboard</strong>, giving both fire response units and community administrators
+              a geospatial overview of active incidents, historical hotspots, and response
+              coverage — enabling faster, data-driven emergency decision-making.
+            </p>
+          </div>
+        </div>
+
+        <!-- Side Info -->
+        <div class="col-lg-4 fade-up">
+          <!-- Project Details Card -->
+          <div class="detail-card mb-4">
+            <h3>Project Details</h3>
+            <div style="font-size:0.88rem;color:var(--muted);">
+              <div class="d-flex justify-content-between py-2 border-bottom" style="border-color:var(--border-color)!important;">
+                <span style="font-weight:600;color:var(--primary);">Type</span>
+                <span>Web &amp; Mobile App</span>
+              </div>
+              <div class="d-flex justify-content-between py-2 border-bottom" style="border-color:var(--border-color)!important;">
+                <span style="font-weight:600;color:var(--primary);">Category</span>
+                <span>Public Safety / AI</span>
+              </div>
+              <div class="d-flex justify-content-between py-2 border-bottom" style="border-color:var(--border-color)!important;">
+                <span style="font-weight:600;color:var(--primary);">AI Model</span>
+                <span>CNN Classification</span>
+              </div>
+              <div class="d-flex justify-content-between py-2">
+                <span style="font-weight:600;color:var(--primary);">Maps</span>
+                <span>Google Maps API</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tech Stack Card -->
+          <div class="detail-card">
+            <h3>Tech Stack</h3>
+            <div class="d-flex flex-wrap gap-1 mt-2">
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">TensorFlow</span>
+              <span class="tech-pill">CNN</span>
+              <span class="tech-pill">React Native</span>
+              <span class="tech-pill">Node.js</span>
+              <span class="tech-pill">Google Maps API</span>
+              <span class="tech-pill">Firebase</span>
+              <span class="tech-pill">MySQL</span>
+              <span class="tech-pill">REST API</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Features -->
+      <div class="row g-4 mt-2">
+        <div class="col-12 fade-up">
+          <div class="detail-card">
+            <h3>Key Features</h3>
+            <div class="row g-3 mt-1">
+              <div class="col-md-6 col-lg-3">
+                <div class="d-flex gap-3 align-items-start">
+                  <div style="width:40px;height:40px;border-radius:10px;background:rgba(45,212,191,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                    <i class="bi bi-phone" style="color:var(--accent);font-size:1.1rem;"></i>
+                  </div>
+                  <div>
+                    <div style="font-weight:700;font-size:0.88rem;color:var(--primary);margin-bottom:4px;">Mobile Reporting</div>
+                    <div style="font-size:0.82rem;color:var(--muted);">Citizens submit fire reports with photos directly from their devices.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <div class="d-flex gap-3 align-items-start">
+                  <div style="width:40px;height:40px;border-radius:10px;background:rgba(45,212,191,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                    <i class="bi bi-cpu" style="color:var(--accent);font-size:1.1rem;"></i>
+                  </div>
+                  <div>
+                    <div style="font-weight:700;font-size:0.88rem;color:var(--primary);margin-bottom:4px;">CNN Validation</div>
+                    <div style="font-size:0.82rem;color:var(--muted);">AI model verifies image authenticity to filter false reports.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <div class="d-flex gap-3 align-items-start">
+                  <div style="width:40px;height:40px;border-radius:10px;background:rgba(45,212,191,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                    <i class="bi bi-map" style="color:var(--accent);font-size:1.1rem;"></i>
+                  </div>
+                  <div>
+                    <div style="font-weight:700;font-size:0.88rem;color:var(--primary);margin-bottom:4px;">Live Maps Dashboard</div>
+                    <div style="font-size:0.82rem;color:var(--muted);">Real-time Google Maps visualization of active and historical incidents.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <div class="d-flex gap-3 align-items-start">
+                  <div style="width:40px;height:40px;border-radius:10px;background:rgba(45,212,191,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                    <i class="bi bi-shield-check" style="color:var(--accent);font-size:1.1rem;"></i>
+                  </div>
+                  <div>
+                    <div style="font-weight:700;font-size:0.88rem;color:var(--primary);margin-bottom:4px;">Responder Interface</div>
+                    <div style="font-size:0.82rem;color:var(--muted);">Dedicated dashboard for fire response units with real-time alerts.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Band -->
+      <div class="row mt-4 fade-up">
+        <div class="col-12">
+          <div class="cta-band">
+            <h3>Explore Project FIRA Live</h3>
+            <p>See the full application in action — from incident submission to dashboard visualization.</p>
+            <a href="#" target="_blank" rel="noopener" class="btn-visit-site">
+              <i class="bi bi-box-arrow-up-right"></i>
+              Visit Deployed Website
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation between projects -->
+      <div class="row mt-5 fade-up">
+        <div class="col-12">
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+            <a href="index.html#projects" class="btn-jae-outline" style="padding:11px 28px;">
+              <i class="bi bi-grid-3x3-gap me-2"></i> All Projects
+            </a>
+            <a href="project-hotel-asia.html" class="btn-jae-primary" style="padding:11px 28px;">
+              Next: Hotel Asia <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       FOOTER (Compact)
+  ══════════════════════════════════════════════ -->
+  <footer class="footer" style="padding:48px 0 32px;">
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="row align-items-center">
+        <div class="col-md-5">
+          <a href="index.html" class="footer-brand" style="display:block;margin-bottom:4px;">
+            JAE <span>Collective</span>
+          </a>
+          <p class="footer-tagline" style="font-size:0.85rem;margin:0;">
+            "Your business should be Digitized!"
+          </p>
+        </div>
+        <div class="col-md-4 my-3 my-md-0">
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope-fill"></i>
+            <a href="mailto:JashmineVerdida08@gmail.com"
+               style="color:rgba(255,255,255,0.55);font-size:0.82rem;">
+               JashmineVerdida08@gmail.com
+            </a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope-fill"></i>
+            <a href="mailto:eijay.pepito8@gmail.com"
+               style="color:rgba(255,255,255,0.55);font-size:0.82rem;">
+               eijay.pepito8@gmail.com
+            </a>
+          </div>
+        </div>
+        <div class="col-md-3 text-md-end footer-bottom">
+          &copy; 2026 JAE Collective
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.10 });
+    fadeEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

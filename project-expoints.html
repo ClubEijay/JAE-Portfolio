@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EXPoints — A gamified PHP web platform for video game reviews with XP points, community tools, and role-based admin controls, by JAE Collective." />
+  <title>EXPoints | JAE Collective</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════════════ -->
+  <nav class="navbar navbar-jae navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/jae-logo.png" alt="JAE Collective Logo" class="brand-logo"
+             onerror="this.style.display='none'">
+        <span class="brand-wordmark">JAE <span>Collective</span></span>
+      </a>
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navMenu"
+              aria-controls="navMenu" aria-expanded="false">
+        <i class="bi bi-list" style="font-size:1.4rem;color:var(--primary);"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-1 align-items-lg-center py-3 py-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="index.html#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn-jae-primary" href="index.html#contact"
+               style="padding:10px 24px;font-size:0.82rem;">
+              Get in Touch
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════
+       PROJECT HERO
+  ══════════════════════════════════════════════ -->
+  <section class="project-hero" style="background: linear-gradient(135deg, #121E28 0%, #1A2530 60%, #1E2C3A 100%);">
+    <div class="container" style="position:relative;z-index:2;">
+
+      <a href="index.html#projects" class="back-link">
+        <i class="bi bi-arrow-left"></i> Back to Portfolio
+      </a>
+
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <span class="project-hero-label">&#9670; PHP Web Platform &amp; Community</span>
+          <h1 class="project-hero-title">EXPoints</h1>
+          <p class="project-hero-sub">
+            A gamified video game review platform where passion for gaming meets
+            community — earn XP, rate reviews, and engage in real-time.
+          </p>
+
+          <div class="d-flex flex-wrap gap-2 mt-4">
+            <span class="tech-pill" style="background:rgba(45,212,191,0.12);border-color:rgba(45,212,191,0.3);color:var(--accent);">
+              <i class="bi bi-controller" style="color:var(--accent);"></i> Gaming
+            </span>
+            <span class="tech-pill" style="background:rgba(45,212,191,0.12);border-color:rgba(45,212,191,0.3);color:var(--accent);">
+              <i class="bi bi-star-fill" style="color:var(--accent);"></i> Gamification
+            </span>
+            <span class="tech-pill" style="background:rgba(45,212,191,0.12);border-color:rgba(45,212,191,0.3);color:var(--accent);">
+              <i class="bi bi-shield-lock" style="color:var(--accent);"></i> Role-Based Access
+            </span>
+            <span class="tech-pill" style="background:rgba(45,212,191,0.12);border-color:rgba(45,212,191,0.3);color:var(--accent);">
+              <i class="bi bi-filetype-php" style="color:var(--accent);"></i> PHP
+            </span>
+          </div>
+        </div>
+
+        <div class="col-lg-4 offset-lg-1 d-none d-lg-block text-end">
+          <svg width="220" height="220" viewBox="0 0 220 220" fill="none"
+               style="opacity:0.18;animation:floatHex 7s ease-in-out infinite 1s;">
+            <polygon points="110,12 208,62 208,158 110,208 12,158 12,62"
+                     stroke="#2DD4BF" stroke-width="2" fill="rgba(45,212,191,0.1)"/>
+            <polygon points="110,42 180,80 180,140 110,178 40,140 40,80"
+                     stroke="#2DD4BF" stroke-width="1.5" fill="rgba(45,212,191,0.06)"/>
+            <text x="110" y="104" text-anchor="middle"
+                  font-family="Montserrat,sans-serif" font-size="20" font-weight="900"
+                  fill="#2DD4BF">EX</text>
+            <text x="110" y="130" text-anchor="middle"
+                  font-family="Montserrat,sans-serif" font-size="20" font-weight="900"
+                  fill="#2DD4BF">POINTS</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       PROJECT SCREENSHOT CAROUSEL
+  ══════════════════════════════════════════════ -->
+  <div style="background:var(--light-bg); padding-bottom: 8px;">
+    <div class="container">
+      <div class="browser-frame-wrap">
+
+        <!-- Browser chrome bar -->
+        <div class="browser-chrome">
+          <div class="browser-dots">
+            <span class="b-dot b-dot-red"></span>
+            <span class="b-dot b-dot-yellow"></span>
+            <span class="b-dot b-dot-green"></span>
+          </div>
+          <div class="browser-address-bar">
+            <i class="bi bi-lock-fill"></i>
+            expoints.vercel.app
+          </div>
+          <div style="width:60px; flex-shrink:0;"></div>
+        </div>
+
+        <!-- Carousel -->
+        <div id="expointsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4500">
+
+          <!-- Indicators -->
+          <div class="carousel-indicators carousel-indicators-jae">
+            <button type="button" data-bs-target="#expointsCarousel" data-bs-slide-to="0"
+                    class="active" aria-current="true" aria-label="Screenshot 1"></button>
+            <button type="button" data-bs-target="#expointsCarousel" data-bs-slide-to="1"
+                    aria-label="Screenshot 2"></button>
+            <button type="button" data-bs-target="#expointsCarousel" data-bs-slide-to="2"
+                    aria-label="Screenshot 3"></button>
+          </div>
+
+          <!-- Slides -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="images/expoints-1.png" class="d-block w-100" alt="EXPoints Screenshot 1"
+                   onerror="this.src='https://placehold.co/1200x675/1A2530/2DD4BF?text=EXPoints+Screenshot+1&font=montserrat'" />
+            </div>
+            <div class="carousel-item">
+              <img src="images/expoints-2.png" class="d-block w-100" alt="EXPoints Screenshot 2"
+                   onerror="this.src='https://placehold.co/1200x675/1A2530/2DD4BF?text=EXPoints+Screenshot+2&font=montserrat'" />
+            </div>
+            <div class="carousel-item">
+              <img src="images/expoints-3.png" class="d-block w-100" alt="EXPoints Screenshot 3"
+                   onerror="this.src='https://placehold.co/1200x675/1A2530/2DD4BF?text=EXPoints+Screenshot+3&font=montserrat'" />
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <button class="jae-carousel-btn jae-prev" type="button"
+                  data-bs-target="#expointsCarousel" data-bs-slide="prev" aria-label="Previous">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+          <button class="jae-carousel-btn jae-next" type="button"
+                  data-bs-target="#expointsCarousel" data-bs-slide="next" aria-label="Next">
+            <i class="bi bi-chevron-right"></i>
+          </button>
+
+        </div><!-- /carousel -->
+      </div><!-- /browser-frame-wrap -->
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       PROJECT DETAILS
+  ══════════════════════════════════════════════ -->
+  <section class="project-detail-section" style="background:var(--light-bg);">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- Main Description -->
+        <div class="col-lg-8 fade-up">
+          <div class="detail-card h-100">
+            <h3>Project Overview</h3>
+            <p>
+              EXPoints is a fully-featured, <strong>PHP-based web platform</strong> that
+              serves as a centralized hub for the gaming community to discover, discuss,
+              and rate video games. Users can post detailed game reviews, assign scores,
+              comment on others' reviews, and engage in real-time community discourse —
+              all within a single, cohesive interface.
+            </p>
+            <br/>
+            <p>
+              What sets EXPoints apart is its <strong>gamified experience layer</strong>.
+              Every meaningful action — posting a review, receiving upvotes, commenting —
+              earns the user XP Points. These points feed into a visible progression system
+              that rewards active community members, driving engagement and creating a
+              sense of achievement that keeps users coming back.
+            </p>
+            <br/>
+            <p>
+              The platform implements a robust <strong>role-based access control (RBAC)
+              system</strong>, with clearly defined permissions for regular users and
+              administrators. Admins have access to a dedicated management dashboard where
+              they can moderate reviews, manage ratings, oversee community interactions,
+              and handle user accounts — ensuring the community remains healthy and
+              content quality stays high.
+            </p>
+            <br/>
+            <p>
+              Customizable user profiles allow members to express their gaming identity,
+              while the secure backend ensures that all content moderation and admin
+              operations are protected with proper authentication and authorization layers.
+            </p>
+          </div>
+        </div>
+
+        <!-- Side Info -->
+        <div class="col-lg-4 fade-up">
+          <div class="detail-card mb-4">
+            <h3>Project Details</h3>
+            <div style="font-size:0.88rem;color:var(--muted);">
+              <div class="d-flex justify-content-between py-2 border-bottom" style="border-color:var(--border-color)!important;">
+                <span style="font-weight:600;color:var(--primary);">Type</span>
+                <span>Full-Stack Web App</span>
+              </div>
+              <div class="d-flex justify-content-between py-2 border-bottom" style="border-color:var(--border-color)!important;">
+                <span style="font-weight:600;color:var(--primary);">Category</span>
+                <span>Gaming / Community</span>
+              </div>
+              <div class="d-flex justify-content-between py-2 border-bottom" style="border-color:var(--border-color)!important;">
+                <span style="font-weight:600;color:var(--primary);">Backend</span>
+                <span>PHP (MVC)</span>
+              </div>
+              <div class="d-flex justify-content-between py-2 border-bottom" style="border-color:var(--border-color)!important;">
+                <span style="font-weight:600;color:var(--primary);">Database</span>
+                <span>MySQL</span>
+              </div>
+              <div class="d-flex justify-content-between py-2">
+                <span style="font-weight:600;color:var(--primary);">Access</span>
+                <span>RBAC System</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-card">
+            <h3>Tech Stack</h3>
+            <div class="d-flex flex-wrap gap-1 mt-2">
+              <span class="tech-pill">PHP</span>
+              <span class="tech-pill">MySQL</span>
+              <span class="tech-pill">HTML5</span>
+              <span class="tech-pill">CSS3</span>
+              <span class="tech-pill">JavaScript</span>
+              <span class="tech-pill">Bootstrap 5</span>
+              <span class="tech-pill">AJAX</span>
+              <span class="tech-pill">Session Auth</span>
+              <span class="tech-pill">RBAC</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Features -->
+      <div class="row g-4 mt-2">
+        <div class="col-12 fade-up">
+          <div class="detail-card">
+            <h3>Key Features</h3>
+            <div class="row g-3 mt-1">
+              <div class="col-md-6 col-lg-3">
+                <div class="d-flex gap-3 align-items-start">
+                  <div style="width:40px;height:40px;border-radius:10px;background:rgba(45,212,191,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                    <i class="bi bi-star-fill" style="color:var(--accent);font-size:1.1rem;"></i>
+                  </div>
+                  <div>
+                    <div style="font-weight:700;font-size:0.88rem;color:var(--primary);margin-bottom:4px;">XP Gamification</div>
+                    <div style="font-size:0.82rem;color:var(--muted);">Earn XP for reviews, ratings, and community contributions.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <div class="d-flex gap-3 align-items-start">
+                  <div style="width:40px;height:40px;border-radius:10px;background:rgba(45,212,191,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                    <i class="bi bi-chat-left-text" style="color:var(--accent);font-size:1.1rem;"></i>
+                  </div>
+                  <div>
+                    <div style="font-weight:700;font-size:0.88rem;color:var(--primary);margin-bottom:4px;">Community Tools</div>
+                    <div style="font-size:0.82rem;color:var(--muted);">Real-time commenting, rating, and upvoting on all reviews.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <div class="d-flex gap-3 align-items-start">
+                  <div style="width:40px;height:40px;border-radius:10px;background:rgba(45,212,191,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                    <i class="bi bi-person-circle" style="color:var(--accent);font-size:1.1rem;"></i>
+                  </div>
+                  <div>
+                    <div style="font-weight:700;font-size:0.88rem;color:var(--primary);margin-bottom:4px;">Custom Profiles</div>
+                    <div style="font-size:0.82rem;color:var(--muted);">Personalizable user profiles showcasing XP rank and reviews.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <div class="d-flex gap-3 align-items-start">
+                  <div style="width:40px;height:40px;border-radius:10px;background:rgba(45,212,191,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                    <i class="bi bi-shield-lock" style="color:var(--accent);font-size:1.1rem;"></i>
+                  </div>
+                  <div>
+                    <div style="font-weight:700;font-size:0.88rem;color:var(--primary);margin-bottom:4px;">Admin Panel</div>
+                    <div style="font-size:0.82rem;color:var(--muted);">Role-based admin dashboard for secure content moderation.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- XP Tier Preview -->
+      <div class="row g-4 mt-2">
+        <div class="col-12 fade-up">
+          <div class="detail-card">
+            <h3>XP Progression System</h3>
+            <div class="row g-3 mt-1">
+              <!-- Tier items -->
+              <div class="col-6 col-md-4 col-lg-2">
+                <div class="text-center p-3 rounded" style="background:var(--light-bg);border:1.5px solid var(--border-color);">
+                  <div style="font-size:1.6rem;">&#127769;</div>
+                  <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:0.8rem;color:var(--primary);margin-top:6px;">Rookie</div>
+                  <div style="font-size:0.72rem;color:var(--muted);">0 – 99 XP</div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-2">
+                <div class="text-center p-3 rounded" style="background:var(--light-bg);border:1.5px solid var(--border-color);">
+                  <div style="font-size:1.6rem;">&#9679;</div>
+                  <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:0.8rem;color:var(--primary);margin-top:6px;">Regular</div>
+                  <div style="font-size:0.72rem;color:var(--muted);">100 – 499 XP</div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-2">
+                <div class="text-center p-3 rounded" style="background:var(--light-bg);border:1.5px solid var(--border-color);">
+                  <div style="font-size:1.6rem;">&#9883;</div>
+                  <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:0.8rem;color:var(--primary);margin-top:6px;">Veteran</div>
+                  <div style="font-size:0.72rem;color:var(--muted);">500 – 999 XP</div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-2">
+                <div class="text-center p-3 rounded" style="background:var(--light-bg);border:1.5px solid var(--border-color);">
+                  <div style="font-size:1.6rem;">&#128081;</div>
+                  <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:0.8rem;color:var(--primary);margin-top:6px;">Elite</div>
+                  <div style="font-size:0.72rem;color:var(--muted);">1000 – 2499 XP</div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-2">
+                <div class="text-center p-3 rounded" style="background:var(--light-bg);border:1.5px solid var(--border-color);">
+                  <div style="font-size:1.6rem;">&#128293;</div>
+                  <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:0.8rem;color:var(--primary);margin-top:6px;">Legend</div>
+                  <div style="font-size:0.72rem;color:var(--muted);">2500+ XP</div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4 col-lg-2">
+                <div class="text-center p-3 rounded" style="background:rgba(45,212,191,0.1);border:1.5px solid rgba(45,212,191,0.4);">
+                  <div style="font-size:1.6rem;">&#9876;&#65039;</div>
+                  <div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:0.8rem;color:var(--accent);margin-top:6px;">Admin</div>
+                  <div style="font-size:0.72rem;color:var(--muted);">Role-Based</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Band -->
+      <div class="row mt-4 fade-up">
+        <div class="col-12">
+          <div class="cta-band">
+            <h3>Ready to Level Up Your Reviews?</h3>
+            <p>Explore the live EXPoints platform, join the community, and start earning XP today.</p>
+            <a href="#" target="_blank" rel="noopener" class="btn-visit-site">
+              <i class="bi bi-box-arrow-up-right"></i>
+              Visit Deployed Website
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nav between projects -->
+      <div class="row mt-5 fade-up">
+        <div class="col-12">
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+            <a href="project-hotel-asia.html" class="btn-jae-outline" style="padding:11px 28px;">
+              <i class="bi bi-arrow-left me-2"></i> Prev: Hotel Asia
+            </a>
+            <a href="index.html#projects" class="btn-jae-primary" style="padding:11px 28px;">
+              <i class="bi bi-grid-3x3-gap me-2"></i> All Projects
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       FOOTER (Compact)
+  ══════════════════════════════════════════════ -->
+  <footer class="footer" style="padding:48px 0 32px;">
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="row align-items-center">
+        <div class="col-md-5">
+          <a href="index.html" class="footer-brand" style="display:block;margin-bottom:4px;text-decoration:none;">
+            JAE <span>Collective</span>
+          </a>
+          <p class="footer-tagline" style="font-size:0.85rem;margin:0;">
+            "Your business should be Digitized!"
+          </p>
+        </div>
+        <div class="col-md-4 my-3 my-md-0">
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope-fill"></i>
+            <a href="mailto:JashmineVerdida08@gmail.com"
+               style="color:rgba(255,255,255,0.55);font-size:0.82rem;">
+               JashmineVerdida08@gmail.com
+            </a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope-fill"></i>
+            <a href="mailto:eijay.pepito8@gmail.com"
+               style="color:rgba(255,255,255,0.55);font-size:0.82rem;">
+               eijay.pepito8@gmail.com
+            </a>
+          </div>
+        </div>
+        <div class="col-md-3 text-md-end footer-bottom">
+          &copy; 2026 JAE Collective
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.10 });
+    fadeEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

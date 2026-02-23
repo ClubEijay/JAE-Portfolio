@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="JAE Collective — Web Development Agency. We build sleek, modern websites that get your business online." />
+  <title>JAE Collective | Web Development Agency</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════════════ -->
+  <nav class="navbar navbar-jae navbar-expand-lg">
+    <div class="container">
+
+      <!-- Brand / Logo -->
+      <a class="navbar-brand" href="index.html">
+        <img src="images/jae-logo.png" alt="JAE Collective Logo" class="brand-logo"
+             onerror="this.style.display='none'">
+        <span class="brand-wordmark">JAE <span>Collective</span></span>
+      </a>
+
+      <!-- Mobile Toggle -->
+      <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navMenu"
+              aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="bi bi-list" style="font-size:1.4rem; color:var(--primary);"></i>
+      </button>
+
+      <!-- Nav Links -->
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-1 align-items-lg-center py-3 py-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-3">
+            <a class="btn-jae-primary" href="#contact"
+               style="padding:10px 24px; font-size:0.82rem;">
+              Get in Touch
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════
+       HERO SECTION
+  ══════════════════════════════════════════════ -->
+  <section class="hero" id="home">
+
+    <!-- Floating geometric shapes -->
+    <div class="hero-shapes">
+      <!-- Hexagon 1 -->
+      <svg class="hero-hex" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="100,10 190,55 190,145 100,190 10,145 10,55"
+                 stroke="#2DD4BF" stroke-width="2" fill="rgba(45,212,191,0.15)"/>
+      </svg>
+      <!-- Hexagon 2 -->
+      <svg class="hero-hex" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="100,10 190,55 190,145 100,190 10,145 10,55"
+                 stroke="#2DD4BF" stroke-width="1.5" fill="rgba(45,212,191,0.08)"/>
+      </svg>
+      <!-- Hexagon 3 -->
+      <svg class="hero-hex" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="100,10 190,55 190,145 100,190 10,145 10,55"
+                 stroke="#2DD4BF" stroke-width="1" fill="rgba(45,212,191,0.05)"/>
+      </svg>
+    </div>
+
+    <div class="container hero-content">
+      <div class="row align-items-center min-vh-100 py-5">
+        <div class="col-lg-7">
+          <span class="hero-eyebrow">&#9670; Web Development Agency</span>
+          <h1 class="hero-headline">
+            Need a<br>
+            <span class="highlight">Website?</span>
+          </h1>
+          <p class="hero-subheadline">
+            Let's get your business Online. We craft modern, high-performance web
+            experiences that drive real results.
+          </p>
+          <div class="d-flex flex-wrap gap-3 align-items-center">
+            <a href="#contact" class="btn-jae-primary">
+              Get ONLINE today! &nbsp; <i class="bi bi-arrow-right"></i>
+            </a>
+            <a href="#projects" class="btn-jae-outline-accent">
+              View Our Work
+            </a>
+          </div>
+
+          <!-- Social proof strip -->
+          <div class="d-flex flex-wrap gap-4 mt-5 pt-2">
+            <div>
+              <span style="color:var(--accent);font-size:1.6rem;font-weight:900;font-family:'Montserrat',sans-serif;">3+</span>
+              <span style="color:rgba(255,255,255,0.55);font-size:0.8rem;display:block;margin-top:2px;letter-spacing:0.06em;">Projects Launched</span>
+            </div>
+            <div style="width:1px;background:rgba(255,255,255,0.12);"></div>
+            <div>
+              <span style="color:var(--accent);font-size:1.6rem;font-weight:900;font-family:'Montserrat',sans-serif;">2</span>
+              <span style="color:rgba(255,255,255,0.55);font-size:0.8rem;display:block;margin-top:2px;letter-spacing:0.06em;">Founders</span>
+            </div>
+            <div style="width:1px;background:rgba(255,255,255,0.12);"></div>
+            <div>
+              <span style="color:var(--accent);font-size:1.6rem;font-weight:900;font-family:'Montserrat',sans-serif;">100%</span>
+              <span style="color:rgba(255,255,255,0.55);font-size:0.8rem;display:block;margin-top:2px;letter-spacing:0.06em;">Passion-Driven</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Illustration Side -->
+        <div class="col-lg-5 d-none d-lg-flex justify-content-end">
+          <div style="position:relative; width:360px; height:360px;">
+            <!-- Large decorative hex ring -->
+            <svg viewBox="0 0 360 360" fill="none" xmlns="http://www.w3.org/2000/svg"
+                 style="position:absolute;inset:0;width:100%;height:100%;animation:floatHex 9s ease-in-out infinite;">
+              <polygon points="180,20 340,100 340,260 180,340 20,260 20,100"
+                       stroke="rgba(45,212,191,0.35)" stroke-width="2"
+                       fill="rgba(45,212,191,0.05)" stroke-dasharray="8 4"/>
+              <polygon points="180,60 310,127 310,233 180,300 50,233 50,127"
+                       stroke="rgba(45,212,191,0.20)" stroke-width="1.5"
+                       fill="rgba(45,212,191,0.04)"/>
+            </svg>
+            <!-- Centre label -->
+            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+              <span style="font-family:'Montserrat',sans-serif;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;">Building</span>
+              <span style="font-family:'Montserrat',sans-serif;font-size:1.9rem;font-weight:900;color:#fff;line-height:1.1;">Digital<br>Solutions</span>
+              <span style="font-size:0.75rem;color:rgba(255,255,255,0.5);margin-top:10px;letter-spacing:0.06em;">JAE Collective</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave Divider -->
+  <div class="wave-divider" style="background:var(--primary); line-height:0;">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none"
+         xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;">
+      <path d="M0,40 C360,0 1080,80 1440,20 L1440,60 L0,60 Z"
+            fill="#FFFFFF"/>
+    </svg>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       ABOUT / TEAM SECTION
+  ══════════════════════════════════════════════ -->
+  <section class="section-pad about-section" id="about">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="text-center mb-5 fade-up">
+        <span class="section-label">The Team</span>
+        <h2 class="section-title">Meet the Founders</h2>
+        <p class="section-sub">
+          Two passionate developers and designers bringing your digital vision to life.
+        </p>
+      </div>
+
+      <!-- Team Cards -->
+      <div class="row g-4 justify-content-center">
+
+        <!-- Jashmine -->
+        <div class="col-md-6 col-lg-5 fade-up">
+          <div class="team-card h-100">
+            <div class="hex-frame mx-auto">
+              <img src="images/jashmine-profile.png" alt="Jashmine Verdida"
+                   onerror="this.src='https://ui-avatars.com/api/?name=Jashmine+Verdida&size=300&background=1A2530&color=2DD4BF&bold=true'" />
+            </div>
+            <div class="team-name">Jashmine Verdida</div>
+            <div class="team-role">Founder &amp; Co-Developer</div>
+
+            <ul class="team-contact-list">
+              <li>
+                <i class="bi bi-envelope-fill"></i>
+                <a href="mailto:JashmineVerdida08@gmail.com">JashmineVerdida08@gmail.com</a>
+              </li>
+              <li>
+                <i class="bi bi-telephone-fill"></i>
+                <a href="tel:+639569505102">0956 950 5102</a>
+              </li>
+              <li>
+                <i class="bi bi-linkedin"></i>
+                <a href="https://linkedin.com/in/jashmine-verdida" target="_blank" rel="noopener">
+                  Jashmine Verdida
+                </a>
+              </li>
+            </ul>
+
+            <div class="d-flex gap-2 justify-content-center mt-2">
+              <a href="mailto:JashmineVerdida08@gmail.com"
+                 class="btn-jae-outline" style="padding:9px 22px;font-size:0.8rem;">
+                <i class="bi bi-envelope me-1"></i> Email
+              </a>
+              <a href="https://linkedin.com/in/jashmine-verdida" target="_blank" rel="noopener"
+                 class="btn-jae-primary" style="padding:9px 22px;font-size:0.8rem;">
+                <i class="bi bi-linkedin me-1"></i> LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Eijay -->
+        <div class="col-md-6 col-lg-5 fade-up">
+          <div class="team-card h-100">
+            <div class="hex-frame mx-auto">
+              <img src="images/eijay-profile.png" alt="Eijay Pepito"
+                   onerror="this.src='https://ui-avatars.com/api/?name=Eijay+Pepito&size=300&background=1A2530&color=2DD4BF&bold=true'" />
+            </div>
+            <div class="team-name">Eijay Pepito</div>
+            <div class="team-role">Creative Director &amp; Co-Developer</div>
+
+            <ul class="team-contact-list">
+              <li>
+                <i class="bi bi-envelope-fill"></i>
+                <a href="mailto:eijay.pepito8@gmail.com">eijay.pepito8@gmail.com</a>
+              </li>
+              <li>
+                <i class="bi bi-telephone-fill"></i>
+                <a href="tel:+639932662346">0993 266 2346</a>
+              </li>
+              <li>
+                <i class="bi bi-linkedin"></i>
+                <a href="https://linkedin.com/in/eijay-pepito" target="_blank" rel="noopener">
+                  Eijay Pepito
+                </a>
+              </li>
+            </ul>
+
+            <div class="d-flex gap-2 justify-content-center mt-2">
+              <a href="mailto:eijay.pepito8@gmail.com"
+                 class="btn-jae-outline" style="padding:9px 22px;font-size:0.8rem;">
+                <i class="bi bi-envelope me-1"></i> Email
+              </a>
+              <a href="https://linkedin.com/in/eijay-pepito" target="_blank" rel="noopener"
+                 class="btn-jae-primary" style="padding:9px 22px;font-size:0.8rem;">
+                <i class="bi bi-linkedin me-1"></i> LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SKILLS SECTION
+  ══════════════════════════════════════════════ -->
+  <section class="skills-section section-pad-sm" id="skills">
+    <div class="container">
+      <div class="text-center mb-5 fade-up">
+        <span class="section-label">Our Stack</span>
+        <h2 class="section-title">Skillsets &amp; Technologies</h2>
+        <p class="section-sub">
+          A broad and capable toolkit spanning front-end, back-end, design, and beyond.
+        </p>
+      </div>
+
+      <div class="text-center fade-up">
+        <!-- Front-End -->
+        <div class="mb-4">
+          <p class="text-muted mb-3" style="font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;">Front-End</p>
+          <span class="skill-badge"><i class="bi bi-filetype-html"></i> HTML5</span>
+          <span class="skill-badge"><i class="bi bi-filetype-css"></i> CSS3</span>
+          <span class="skill-badge"><i class="bi bi-filetype-js"></i> JavaScript</span>
+          <span class="skill-badge"><i class="bi bi-bootstrap-fill"></i> Bootstrap</span>
+          <span class="skill-badge"><i class="bi bi-code-slash"></i> React</span>
+        </div>
+
+        <!-- Back-End -->
+        <div class="mb-4">
+          <p class="text-muted mb-3" style="font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;">Back-End &amp; Database</p>
+          <span class="skill-badge"><i class="bi bi-filetype-php"></i> PHP</span>
+          <span class="skill-badge"><i class="bi bi-database-fill"></i> MySQL</span>
+          <span class="skill-badge"><i class="bi bi-server"></i> Node.js</span>
+          <span class="skill-badge"><i class="bi bi-cloud-fill"></i> Firebase</span>
+        </div>
+
+        <!-- Tools -->
+        <div>
+          <p class="text-muted mb-3" style="font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;">Design &amp; Tools</p>
+          <span class="skill-badge"><i class="bi bi-palette-fill"></i> UI/UX Design</span>
+          <span class="skill-badge"><i class="bi bi-vector-pen"></i> Figma</span>
+          <span class="skill-badge"><i class="bi bi-git"></i> Git</span>
+          <span class="skill-badge"><i class="bi bi-phone-fill"></i> Responsive Design</span>
+          <span class="skill-badge"><i class="bi bi-graph-up-arrow"></i> SEO</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       STATS STRIP
+  ══════════════════════════════════════════════ -->
+  <div class="stats-strip">
+    <div class="container">
+      <div class="row g-4 text-center">
+        <div class="col-6 col-md-3">
+          <div class="stat-item">
+            <span class="stat-number">3+</span>
+            <span class="stat-label">Projects Delivered</span>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-item">
+            <span class="stat-number">2</span>
+            <span class="stat-label">Expert Founders</span>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-item">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Technologies</span>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-item">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Client-Focused</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       PROJECTS SECTION
+  ══════════════════════════════════════════════ -->
+  <section class="projects-section section-pad" id="projects">
+    <div class="container">
+      <div class="text-center mb-5 fade-up">
+        <span class="section-label">Our Work</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-sub">
+          Real-world solutions built for real-world impact. Every project is crafted with precision.
+        </p>
+      </div>
+
+      <div class="row g-4">
+
+        <!-- Project FIRA -->
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="project-card">
+            <div class="project-card-img-wrap">
+              <img src="images/fira-1.png" alt="Project FIRA"
+                   onerror="this.src='https://placehold.co/600x400/1A2530/2DD4BF?text=Project+FIRA&font=montserrat'" />
+              <div class="project-card-overlay"></div>
+              <span class="project-tag">Web &amp; Mobile</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-title">Project FIRA</h3>
+              <p class="project-teaser">
+                A fire incident reporting web &amp; mobile application powered by a CNN-based
+                image validation model with real-time Google Maps visualization.
+              </p>
+              <a href="project-fira.html" class="btn-jae-outline" style="padding:10px 26px;font-size:0.82rem;align-self:flex-start;">
+                View Project &nbsp;<i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hotel Asia -->
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="project-card">
+            <div class="project-card-img-wrap">
+              <img src="images/hotel-1.png" alt="Hotel Asia"
+                   onerror="this.src='https://placehold.co/600x400/1A2530/2DD4BF?text=Hotel+Asia&font=montserrat'" />
+              <div class="project-card-overlay"></div>
+              <span class="project-tag">Hospitality</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-title">Hotel Asia</h3>
+              <p class="project-teaser">
+                A modern, mobile-responsive hotel website that showcases rooms, facilities,
+                dining, and location while streamlining guest inquiries and bookings.
+              </p>
+              <a href="project-hotel-asia.html" class="btn-jae-outline" style="padding:10px 26px;font-size:0.82rem;align-self:flex-start;">
+                View Project &nbsp;<i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- EXPoints -->
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="project-card">
+            <div class="project-card-img-wrap">
+              <img src="images/expoints-1.png" alt="EXPoints"
+                   onerror="this.src='https://placehold.co/600x400/1A2530/2DD4BF?text=EXPoints&font=montserrat'" />
+              <div class="project-card-overlay"></div>
+              <span class="project-tag">PHP Platform</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-title">EXPoints</h3>
+              <p class="project-teaser">
+                A gamified PHP web platform centralizing video game reviews with XP points,
+                community tools, role-based admin controls, and secure content moderation.
+              </p>
+              <a href="project-expoints.html" class="btn-jae-outline" style="padding:10px 26px;font-size:0.82rem;align-self:flex-start;">
+                View Project &nbsp;<i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       CONTACT SECTION
+  ══════════════════════════════════════════════ -->
+  <section class="section-pad" id="contact"
+           style="background-color: var(--light-bg); position:relative; overflow:hidden;">
+
+    <!-- subtle hex decoration -->
+    <div style="position:absolute;top:-60px;right:-60px;opacity:0.05;pointer-events:none;">
+      <svg width="360" height="360" viewBox="0 0 360 360" fill="none">
+        <polygon points="180,20 340,100 340,260 180,340 20,260 20,100"
+                 stroke="#1A2530" stroke-width="3" fill="none"/>
+        <polygon points="180,60 310,127 310,233 180,300 50,233 50,127"
+                 stroke="#1A2530" stroke-width="2" fill="none"/>
+      </svg>
+    </div>
+
+    <div class="container">
+      <div class="row align-items-center gy-5">
+
+        <div class="col-lg-5 fade-up">
+          <span class="section-label">Contact Us</span>
+          <h2 class="section-title mb-3">Let's Build<br>Something Great</h2>
+          <p style="color:var(--muted);margin-bottom:32px;font-size:0.95rem;">
+            Ready to take your business online? Reach out to either of our founders
+            directly — we'd love to hear about your project.
+          </p>
+
+          <div class="d-flex flex-column gap-3">
+            <a href="mailto:JashmineVerdida08@gmail.com" class="d-flex align-items-center gap-3"
+               style="color:var(--primary);font-size:0.9rem;text-decoration:none;">
+              <div style="width:42px;height:42px;border-radius:10px;background:var(--primary);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <i class="bi bi-envelope-fill" style="color:var(--accent);font-size:1rem;"></i>
+              </div>
+              <div>
+                <div style="font-weight:700;font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);">Jashmine</div>
+                JashmineVerdida08@gmail.com
+              </div>
+            </a>
+
+            <a href="mailto:eijay.pepito8@gmail.com" class="d-flex align-items-center gap-3"
+               style="color:var(--primary);font-size:0.9rem;text-decoration:none;">
+              <div style="width:42px;height:42px;border-radius:10px;background:var(--primary);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <i class="bi bi-envelope-fill" style="color:var(--accent);font-size:1rem;"></i>
+              </div>
+              <div>
+                <div style="font-weight:700;font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);">Eijay</div>
+                eijay.pepito8@gmail.com
+              </div>
+            </a>
+
+            <a href="tel:+639569505102" class="d-flex align-items-center gap-3"
+               style="color:var(--primary);font-size:0.9rem;text-decoration:none;">
+              <div style="width:42px;height:42px;border-radius:10px;background:var(--primary);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <i class="bi bi-telephone-fill" style="color:var(--accent);font-size:1rem;"></i>
+              </div>
+              <div>
+                <div style="font-weight:700;font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);">Phone</div>
+                0956 950 5102 &nbsp;/&nbsp; 0993 266 2346
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-lg-6 offset-lg-1 fade-up">
+          <div class="detail-card">
+            <h3 style="font-size:1.1rem;padding-bottom:10px;margin-bottom:24px;">Send Us a Message</h3>
+            <form>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label"
+                         style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);">
+                    Full Name
+                  </label>
+                  <input type="text" class="form-control"
+                         placeholder="Juan Dela Cruz"
+                         style="border-radius:8px;border:1.5px solid var(--border-color);padding:12px 16px;font-size:0.9rem;"/>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label"
+                         style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);">
+                    Email Address
+                  </label>
+                  <input type="email" class="form-control"
+                         placeholder="you@example.com"
+                         style="border-radius:8px;border:1.5px solid var(--border-color);padding:12px 16px;font-size:0.9rem;"/>
+                </div>
+                <div class="col-12">
+                  <label class="form-label"
+                         style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);">
+                    Subject
+                  </label>
+                  <input type="text" class="form-control"
+                         placeholder="I need a website for my business"
+                         style="border-radius:8px;border:1.5px solid var(--border-color);padding:12px 16px;font-size:0.9rem;"/>
+                </div>
+                <div class="col-12">
+                  <label class="form-label"
+                         style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);">
+                    Message
+                  </label>
+                  <textarea class="form-control" rows="5"
+                            placeholder="Tell us about your project..."
+                            style="border-radius:8px;border:1.5px solid var(--border-color);padding:12px 16px;font-size:0.9rem;resize:vertical;"></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn-jae-primary w-100" style="padding:14px;">
+                    Send Message &nbsp;<i class="bi bi-send-fill"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════ -->
+  <footer class="footer">
+    <!-- Wave Top -->
+    <div style="margin-top:-2px; line-height:0; transform:rotate(180deg); position:relative; top:-1px;">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none"
+           xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;">
+        <path d="M0,40 C360,0 1080,80 1440,20 L1440,60 L0,60 Z"
+              fill="var(--light-bg)"/>
+      </svg>
+    </div>
+
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="row gy-5">
+
+        <!-- Brand Column -->
+        <div class="col-lg-4">
+          <div class="footer-brand">JAE <span>Collective</span></div>
+          <p class="footer-tagline">"Your business should be Digitized!"</p>
+          <div class="d-flex gap-2">
+            <a href="mailto:JashmineVerdida08@gmail.com"
+               style="width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.6);transition:all 0.3s;"
+               onmouseover="this.style.background='var(--accent)';this.style.color='var(--primary)';"
+               onmouseout="this.style.background='rgba(255,255,255,0.08)';this.style.color='rgba(255,255,255,0.6)';">
+              <i class="bi bi-envelope"></i>
+            </a>
+            <a href="https://linkedin.com/in/jashmine-verdida" target="_blank"
+               style="width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.6);transition:all 0.3s;"
+               onmouseover="this.style.background='var(--accent)';this.style.color='var(--primary)';"
+               onmouseout="this.style.background='rgba(255,255,255,0.08)';this.style.color='rgba(255,255,255,0.6)';">
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="https://linkedin.com/in/eijay-pepito" target="_blank"
+               style="width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.6);transition:all 0.3s;"
+               onmouseover="this.style.background='var(--accent)';this.style.color='var(--primary)';"
+               onmouseout="this.style.background='rgba(255,255,255,0.08)';this.style.color='rgba(255,255,255,0.6)';">
+              <i class="bi bi-person-badge-fill"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-6 col-lg-2">
+          <p class="footer-heading">Navigation</p>
+          <ul class="footer-link-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Projects -->
+        <div class="col-6 col-lg-2">
+          <p class="footer-heading">Projects</p>
+          <ul class="footer-link-list">
+            <li><a href="project-fira.html">Project FIRA</a></li>
+            <li><a href="project-hotel-asia.html">Hotel Asia</a></li>
+            <li><a href="project-expoints.html">EXPoints</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-lg-4">
+          <p class="footer-heading">Get in Touch</p>
+          <div class="footer-contact-item">
+            <i class="bi bi-person-fill"></i>
+            <div>
+              <div style="color:rgba(255,255,255,0.8);font-weight:600;font-size:0.85rem;">Jashmine Verdida</div>
+              <a href="mailto:JashmineVerdida08@gmail.com"
+                 style="color:rgba(255,255,255,0.5);font-size:0.82rem;">JashmineVerdida08@gmail.com</a>
+              <div><a href="tel:+639569505102"
+                      style="color:rgba(255,255,255,0.5);font-size:0.82rem;">0956 950 5102</a></div>
+            </div>
+          </div>
+          <div class="footer-contact-item mt-2">
+            <i class="bi bi-person-fill"></i>
+            <div>
+              <div style="color:rgba(255,255,255,0.8);font-weight:600;font-size:0.85rem;">Eijay Pepito</div>
+              <a href="mailto:eijay.pepito8@gmail.com"
+                 style="color:rgba(255,255,255,0.5);font-size:0.82rem;">eijay.pepito8@gmail.com</a>
+              <div><a href="tel:+639932662346"
+                      style="color:rgba(255,255,255,0.5);font-size:0.82rem;">0993 266 2346</a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <hr class="footer-divider" />
+
+      <div class="row align-items-center">
+        <div class="col-md-6 footer-bottom">
+          &copy; 2026 JAE Collective. All rights reserved.
+        </div>
+        <div class="col-md-6 text-md-end footer-bottom mt-2 mt-md-0">
+          Crafted with <span style="color:var(--accent);">&#9829;</span> by
+          Jashmine &amp; Eijay
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS: Scroll animations + smooth nav highlighting -->
+  <script>
+    // Intersection Observer for .fade-up animations
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    fadeEls.forEach(el => observer.observe(el));
+
+    // Stagger children within same parent
+    document.querySelectorAll('.row .fade-up').forEach((el, i) => {
+      el.style.transitionDelay = `${(i % 3) * 0.10}s`;
+    });
+
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section[id], div[id]');
+    const navLinks = document.querySelectorAll('.navbar-jae .nav-link');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - 80) current = sec.id;
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
+      });
+    });
+
+    // Navbar shadow on scroll
+    const navbar = document.querySelector('.navbar-jae');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        navbar.style.boxShadow = '0 4px 30px rgba(26,37,48,0.12)';
+      } else {
+        navbar.style.boxShadow = '0 2px 20px rgba(26,37,48,0.06)';
+      }
+    });
+  </script>
+</body>
+</html>
