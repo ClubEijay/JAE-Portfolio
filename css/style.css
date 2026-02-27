@@ -1298,8 +1298,9 @@ img { max-width: 100%; }
 
 /* Slides */
 .browser-frame-wrap .carousel-item img {
-  height: 520px;
+  height: 480px;
   object-fit: cover;
+  object-position: top;
   display: block;
   width: 100%;
 }
@@ -1366,7 +1367,7 @@ img { max-width: 100%; }
 }
 
 @media (max-width: 768px) {
-  .browser-frame-wrap .carousel-item img { height: 220px; }
+  .browser-frame-wrap .carousel-item img { height: 180px; }
   .jae-carousel-btn { opacity: 1 !important; }
   .browser-address-bar { font-size: 0.68rem; }
 }

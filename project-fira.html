@@ -62,8 +62,10 @@
           <span class="project-hero-label">&#9670; Web &amp; Mobile Application</span>
           <h1 class="project-hero-title">Project FIRA</h1>
           <p class="project-hero-sub">
-            Fire Incident Reporting &amp; Analysis — a smart platform combining mobile
-            reporting, AI-powered image validation, and live map intelligence.
+            A community-driven fire response ecosystem that uses CNN-based image validation
+            to authenticate geotagged citizen reports, providing fire authorities with
+            real-time map intelligence and AI-assisted alarm level classification for
+            faster, coordinated intervention.
           </p>
 
           <!-- Meta chips -->
@@ -76,6 +78,12 @@
             </span>
             <span class="tech-pill" style="background:rgba(45,212,191,0.12);border-color:rgba(45,212,191,0.3);color:var(--accent);">
               <i class="bi bi-geo-alt" style="color:var(--accent);"></i> Google Maps
+            </span>
+            <span class="tech-pill" style="background:rgba(45,212,191,0.12);border-color:rgba(45,212,191,0.3);color:var(--accent);">
+              <i class="bi bi-stars" style="color:var(--accent);"></i> OpenAI
+            </span>
+            <span class="tech-pill" style="background:rgba(45,212,191,0.12);border-color:rgba(45,212,191,0.3);color:var(--accent);">
+              <i class="bi bi-globe2" style="color:var(--accent);"></i> Web App
             </span>
           </div>
         </div>
@@ -102,6 +110,7 @@
   ══════════════════════════════════════════════ -->
   <div style="background:var(--light-bg); padding-bottom: 8px;">
     <div class="container">
+      <div style="max-width: 900px; margin: 0 auto;">
       <div class="browser-frame-wrap">
 
         <!-- Browser chrome bar -->
@@ -113,7 +122,7 @@
           </div>
           <div class="browser-address-bar">
             <i class="bi bi-lock-fill"></i>
-            fira-app.vercel.app
+            projectfira.vercel.app
           </div>
           <div style="width:60px; flex-shrink:0;"></div>
         </div>
@@ -134,15 +143,15 @@
           <!-- Slides -->
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="images/fira-1.png" class="d-block w-100" alt="FIRA Screenshot 1"
+              <img src="images/FIRA Screenshot 1.png" class="d-block w-100" alt="FIRA Screenshot 1"
                    onerror="this.src='https://placehold.co/1200x675/1A2530/2DD4BF?text=FIRA+Screenshot+1&font=montserrat'" />
             </div>
             <div class="carousel-item">
-              <img src="images/fira-2.png" class="d-block w-100" alt="FIRA Screenshot 2"
+              <img src="images/FIRA Screenshot 2.png" class="d-block w-100" alt="FIRA Screenshot 2"
                    onerror="this.src='https://placehold.co/1200x675/1A2530/2DD4BF?text=FIRA+Screenshot+2&font=montserrat'" />
             </div>
             <div class="carousel-item">
-              <img src="images/fira-3.png" class="d-block w-100" alt="FIRA Screenshot 3"
+              <img src="images/FIRA Screenshot 3.png" class="d-block w-100" alt="FIRA Screenshot 3"
                    onerror="this.src='https://placehold.co/1200x675/1A2530/2DD4BF?text=FIRA+Screenshot+3&font=montserrat'" />
             </div>
           </div>
@@ -159,6 +168,7 @@
 
         </div><!-- /carousel -->
       </div><!-- /browser-frame-wrap -->
+      </div><!-- /max-width constrain -->
     </div>
   </div>
 
@@ -174,26 +184,42 @@
           <div class="detail-card h-100">
             <h3>Project Overview</h3>
             <p>
-              Project FIRA (Fire Incident Reporting and Analysis) is a comprehensive web
-              and mobile application designed to modernize fire incident reporting for
-              citizens and fire response units alike. The system enables individuals to
-              submit real-time fire incident reports directly from their mobile devices,
-              including photographic evidence of the incident.
+              <strong>Project FIRA (Fire Incident Reporting &amp; Analysis)</strong> is a
+              community-driven disaster management ecosystem designed to modernize emergency
+              response in high-density urban areas like Cebu City. The platform bridges the
+              critical gap between grassroots citizen reporting and institutional emergency
+              response by replacing fragmented, manual processes with a synchronized,
+              intelligent infrastructure.
             </p>
             <br/>
             <p>
-              At the core of the platform is a <strong>Convolutional Neural Network (CNN)</strong>
-              -based likelihood model that automatically validates submitted images — determining
-              whether the photo genuinely depicts a fire incident. This intelligent validation
-              layer significantly reduces false reports and ensures only credible data reaches
-              emergency responders.
+              At the heart of the system is a <strong>three-pillar technological approach</strong>
+              that ensures every report is credible and actionable. First, a
+              <strong>Convolutional Neural Network (CNN)</strong> automatically validates
+              user-submitted photos, filtering out false alarms by distinguishing real fire
+              hazards from non-emergencies. Second, a <strong>Large Language Model (LLM)</strong>
+              analyzes responder communications and suggests appropriate fire alarm levels,
+              providing vital decision support to the command center. Finally, the ecosystem
+              is unified through a centralized dashboard powered by the
+              <strong>Google Maps API</strong>, giving fire authorities real-time geospatial
+              visualization of validated incidents for precise resource deployment.
             </p>
             <br/>
             <p>
-              Validated incidents are then visualized on a <strong>real-time Google Maps
-              dashboard</strong>, giving both fire response units and community administrators
-              a geospatial overview of active incidents, historical hotspots, and response
-              coverage — enabling faster, data-driven emergency decision-making.
+              The technical architecture features a <strong>React Native</strong> mobile
+              application for citizens and responders, and a <strong>React.js</strong> web
+              dashboard for administrative oversight — backed by <strong>Node.js</strong> and
+              <strong>Supabase</strong> for secure authentication and real-time data
+              synchronization, with AI components optimized via <strong>TensorFlow Lite</strong>
+              for efficient on-device performance.
+            </p>
+            <br/>
+            <p>
+              Initial testing confirmed the system's accuracy and dependability, with
+              <strong>100% of respondents</strong> valuing the reliability of its notification
+              system. Developed by <strong>Team JAE</strong>, Project FIRA serves as a
+              scalable, AI-assisted model for modernizing urban safety and protecting
+              vulnerable communities from escalating fire tragedies.
             </p>
           </div>
         </div>
@@ -214,7 +240,7 @@
               </div>
               <div class="d-flex justify-content-between py-2 border-bottom" style="border-color:var(--border-color)!important;">
                 <span style="font-weight:600;color:var(--primary);">AI Model</span>
-                <span>CNN Classification</span>
+                <span>CNN Classification, GPT-4o-Mini</span>
               </div>
               <div class="d-flex justify-content-between py-2">
                 <span style="font-weight:600;color:var(--primary);">Maps</span>
@@ -230,10 +256,11 @@
               <span class="tech-pill">Python</span>
               <span class="tech-pill">TensorFlow</span>
               <span class="tech-pill">CNN</span>
+              <span class="tech-pill">React</span>
               <span class="tech-pill">React Native</span>
               <span class="tech-pill">Node.js</span>
               <span class="tech-pill">Google Maps API</span>
-              <span class="tech-pill">Firebase</span>
+              <span class="tech-pill">Supabase</span>
               <span class="tech-pill">MySQL</span>
               <span class="tech-pill">REST API</span>
             </div>
@@ -302,7 +329,7 @@
           <div class="cta-band">
             <h3>Explore Project FIRA Live</h3>
             <p>See the full application in action — from incident submission to dashboard visualization.</p>
-            <a href="#" target="_blank" rel="noopener" class="btn-visit-site">
+            <a href="https://projectfira.vercel.app/" target="_blank" rel="noopener" class="btn-visit-site">
               <i class="bi bi-box-arrow-up-right"></i>
               Visit Deployed Website
             </a>
