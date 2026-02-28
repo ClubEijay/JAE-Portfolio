@@ -448,7 +448,7 @@
         <div class="col-md-6 col-lg-4 fade-up">
           <div class="project-card">
             <div class="project-card-img-wrap">
-              <img src="images/hotel-1.png" alt="Hotel Asia"
+              <img src="images/Hotel Asia Screenshot 1.png" alt="Hotel Asia"
                    onerror="this.src='https://placehold.co/600x400/1A2530/2DD4BF?text=Hotel+Asia&font=montserrat'" />
               <div class="project-card-overlay"></div>
               <span class="project-tag">Hospitality</span>
@@ -470,7 +470,7 @@
         <div class="col-md-6 col-lg-4 fade-up">
           <div class="project-card">
             <div class="project-card-img-wrap">
-              <img src="images/expoints-1.png" alt="EXPoints"
+              <img src="images/EXPoints Screenshot 1.png" alt="EXPoints"
                    onerror="this.src='https://placehold.co/600x400/1A2530/2DD4BF?text=EXPoints&font=montserrat'" />
               <div class="project-card-overlay"></div>
               <span class="project-tag">PHP Platform</span>
@@ -760,6 +760,81 @@
         navbar.style.boxShadow = '0 2px 20px rgba(26,37,48,0.06)';
       }
     });
+
   </script>
+
+  <script>
+    // ── Business Card Widget ──
+    document.addEventListener('DOMContentLoaded', () => {
+      const bcFloat   = document.getElementById('bcFloat');
+      const bcOverlay = document.getElementById('bcOverlay');
+      const bcCard    = document.getElementById('bcCard');
+      const bcClose   = document.getElementById('bcClose');
+
+      // Show float widget after scrolling past hero
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+          bcFloat.classList.add('bc-float--visible');
+        } else {
+          bcFloat.classList.remove('bc-float--visible');
+        }
+      });
+
+      // Open modal
+      bcFloat.addEventListener('click', () => {
+        bcOverlay.classList.add('bc-modal--open');
+        document.body.style.overflow = 'hidden';
+      });
+
+      // Close modal
+      bcClose.addEventListener('click', closeModal);
+      bcOverlay.addEventListener('click', (e) => {
+        if (e.target === bcOverlay) closeModal();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+      });
+
+      function closeModal() {
+        bcOverlay.classList.remove('bc-modal--open');
+        document.body.style.overflow = '';
+        setTimeout(() => bcCard.classList.remove('bc-flipped'), 400);
+      }
+
+      // Flip card on click
+      bcCard.addEventListener('click', () => {
+        bcCard.classList.toggle('bc-flipped');
+      });
+    });
+  </script>
+
+  <!-- ── Floating Business Card Widget ── -->
+  <div class="bc-float" id="bcFloat" title="Our Business Card">
+    <div class="bc-float-inner">
+      <img src="images/JAE Business Card Side 1.png" alt="JAE Business Card" />
+    </div>
+  </div>
+
+  <!-- ── Business Card Modal ── -->
+  <div class="bc-modal-overlay" id="bcOverlay" role="dialog" aria-modal="true" aria-label="JAE Collective Business Card">
+    <div class="bc-modal-wrap">
+      <button class="bc-close" id="bcClose" aria-label="Close"><i class="bi bi-x"></i></button>
+      <span class="bc-modal-hint">&#9670; JAE Collective</span>
+      <div class="bc-card-scene">
+        <div class="bc-card" id="bcCard">
+          <div class="bc-card-face bc-card-front">
+            <img src="images/JAE Business Card Side 1.png" alt="Business Card Front" />
+          </div>
+          <div class="bc-card-face bc-card-back">
+            <img src="images/JAE Business Card Side 2.png" alt="Business Card Back" />
+          </div>
+        </div>
+      </div>
+      <div class="bc-flip-hint">
+        <i class="bi bi-arrow-repeat"></i> Click the card to flip
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
