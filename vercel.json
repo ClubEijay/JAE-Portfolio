@@ -1,0 +1,10 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "routes": [
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/project-fira", "dest": "/project-fira.html" },
+    { "src": "/project-hotel-asia", "dest": "/project-hotel-asia.html" },
+    { "src": "/project-expoints", "dest": "/project-expoints.html" }
+  ]
+}
