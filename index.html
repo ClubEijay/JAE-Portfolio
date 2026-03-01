@@ -559,14 +559,14 @@
         <div class="col-lg-6 offset-lg-1 fade-up">
           <div class="detail-card">
             <h3 style="font-size:1.1rem;padding-bottom:10px;margin-bottom:24px;">Send Us a Message</h3>
-            <form>
+            <form id="contactForm">
               <div class="row g-3">
                 <div class="col-md-6">
                   <label class="form-label"
                          style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);">
                     Full Name
                   </label>
-                  <input type="text" class="form-control"
+                  <input type="text" name="from_name" id="cf_name" class="form-control" required
                          placeholder="Juan Dela Cruz"
                          style="border-radius:8px;border:1.5px solid var(--border-color);padding:12px 16px;font-size:0.9rem;"/>
                 </div>
@@ -575,7 +575,7 @@
                          style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);">
                     Email Address
                   </label>
-                  <input type="email" class="form-control"
+                  <input type="email" name="from_email" id="cf_email" class="form-control" required
                          placeholder="you@example.com"
                          style="border-radius:8px;border:1.5px solid var(--border-color);padding:12px 16px;font-size:0.9rem;"/>
                 </div>
@@ -584,7 +584,7 @@
                          style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);">
                     Subject
                   </label>
-                  <input type="text" class="form-control"
+                  <input type="text" name="subject" id="cf_subject" class="form-control" required
                          placeholder="I need a website for my business"
                          style="border-radius:8px;border:1.5px solid var(--border-color);padding:12px 16px;font-size:0.9rem;"/>
                 </div>
@@ -593,15 +593,16 @@
                          style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);">
                     Message
                   </label>
-                  <textarea class="form-control" rows="5"
+                  <textarea class="form-control" name="message" id="cf_message" rows="5" required
                             placeholder="Tell us about your project..."
                             style="border-radius:8px;border:1.5px solid var(--border-color);padding:12px 16px;font-size:0.9rem;resize:vertical;"></textarea>
                 </div>
                 <div class="col-12">
-                  <button type="submit" class="btn-jae-primary w-100" style="padding:14px;">
+                  <button type="submit" id="cfSubmitBtn" class="btn-jae-primary w-100" style="padding:14px;">
                     Send Message &nbsp;<i class="bi bi-send-fill"></i>
                   </button>
                 </div>
+                <div class="col-12" id="cfFeedback" style="display:none;border-radius:8px;padding:12px 16px;font-size:0.88rem;font-weight:600;"></div>
               </div>
             </form>
           </div>
@@ -717,6 +718,41 @@
 
   <!-- Bootstrap 5 JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Contact Form: mailto handler -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form     = document.getElementById('contactForm');
+      const btn      = document.getElementById('cfSubmitBtn');
+      const feedback = document.getElementById('cfFeedback');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const name    = document.getElementById('cf_name').value.trim();
+        const email   = document.getElementById('cf_email').value.trim();
+        const subject = document.getElementById('cf_subject').value.trim();
+        const message = document.getElementById('cf_message').value.trim();
+
+        const body = `From: ${name} (${email})\n\n${message}`;
+
+        const mailtoLink =
+          'mailto:JashmineVerdida08@gmail.com,eijay.pepito8@gmail.com' +
+          '?subject=' + encodeURIComponent(subject) +
+          '&body='    + encodeURIComponent(body);
+
+        window.location.href = mailtoLink;
+
+        // Show confirmation and reset
+        feedback.style.background = 'rgba(45,212,191,0.12)';
+        feedback.style.border     = '1.5px solid rgba(45,212,191,0.4)';
+        feedback.style.color      = 'var(--accent)';
+        feedback.innerHTML        = '<i class="bi bi-check-circle-fill me-2"></i>Your email client has been opened with your message pre-filled. Just hit Send!';
+        feedback.style.display    = 'block';
+        form.reset();
+      });
+    });
+  </script>
 
   <!-- Custom JS: Scroll animations + smooth nav highlighting -->
   <script>
