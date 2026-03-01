@@ -13,11 +13,9 @@
 
 ## 🌐 Live Demo
 
-> **[View Live Site Here](https://your-username.github.io/jae-portfolio/)**
->
-> ⚠️ *Note: Update the link above once GitHub Pages is enabled on this repository.*
->
-> To enable: Go to **Settings → Pages → Source → Deploy from branch → `main` / `root`**
+> **[https://jae-two.vercel.app/](https://jae-two.vercel.app/)**
+
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://jae-two.vercel.app/)
 
 ---
 
@@ -107,8 +105,8 @@ This project requires **no build tools, no npm, no dependencies to install**. It
 **1. Clone the repository**
 
 ```bash
-git clone https://github.com/your-username/jae-portfolio.git
-cd jae-portfolio
+git clone https://github.com/ClubEijay/JAE-Portfolio.git
+cd JAE-Portfolio
 ```
 
 **2. Add your image assets**
@@ -172,7 +170,7 @@ All images are loaded from the `images/` folder. Use this table as a checklist b
 | Fonts | Google Fonts — Montserrat & Inter |
 | Carousel | Bootstrap 5 Carousel (custom-styled) |
 | Animations | CSS `@keyframes` + Intersection Observer API |
-| Hosting | GitHub Pages |
+| Hosting | Vercel (auto-deploys on push to `main`) |
 
 No frameworks, bundlers, or back-end required. Zero dependencies to install.
 
