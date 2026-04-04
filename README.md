@@ -1,4 +1,4 @@
-# JAE Collective — Team Portfolio
+# VERPTO — Team Portfolio
 ### *Digitizing business through modern web solutions.*
 
 <br/>
@@ -13,9 +13,9 @@
 
 ## 🌐 Live Demo
 
-> **[https://jae-two.vercel.app/](https://jae-two.vercel.app/)**
+> **[https://verpto-two.vercel.app/](https://verpto-two.vercel.app/)**
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://jae-two.vercel.app/)
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://verpto-two.vercel.app/)
 
 ---
 
@@ -35,7 +35,7 @@
 
 ## 🏢 About
 
-**JAE Collective** is a two-person web development agency founded by Jashmine Verdida and Eijay Pepito. This repository contains the source code for our agency's team portfolio website — a fully responsive, production-ready site built with HTML5, custom CSS3, and Bootstrap 5.
+**VERPTO** is a two-person web development agency founded by Jashmine Verdida and Eijay Pepito. This repository contains the source code for our agency's team portfolio website — a fully responsive, production-ready site built with HTML5, custom CSS3, and Bootstrap 5.
 
 The portfolio showcases our team, skillsets, and the projects we have delivered — all wrapped in a tech-forward design with a dark charcoal + teal accent color palette, hexagonal geometric motifs, and smooth scroll animations.
 
@@ -65,7 +65,7 @@ The portfolio showcases our team, skillsets, and the projects we have delivered 
 ## 📁 Folder Structure
 
 ```
-jae-portfolio/
+verpto-portfolio/
 │
 ├── index.html                  # Landing page
 ├── project-fira.html           # Project FIRA detail page
@@ -76,7 +76,7 @@ jae-portfolio/
 │   └── style.css               # All custom styles (variables, layout, components)
 │
 ├── images/                     # ⬅ Drop all your image assets here
-│   ├── jae-logo.png            # Agency logo (navbar & footer)
+│   ├── verpto-logo.png            # Agency logo (navbar & footer)
 │   ├── jashmine-profile.png    # Jashmine's profile photo
 │   ├── eijay-profile.png       # Eijay's profile photo
 │   ├── fira-1.png              # Project FIRA carousel — slide 1
@@ -105,8 +105,8 @@ This project requires **no build tools, no npm, no dependencies to install**. It
 **1. Clone the repository**
 
 ```bash
-git clone https://github.com/ClubEijay/JAE-Portfolio.git
-cd JAE-Portfolio
+git clone https://github.com/ClubEijay/VERPTO-Portfolio.git
+cd VERPTO-Portfolio
 ```
 
 **2. Add your image assets**
@@ -142,7 +142,7 @@ All images are loaded from the `images/` folder. Use this table as a checklist b
 
 | Filename | Used In | Recommended Size |
 |---|---|---|
-| `jae-logo.png` | Navbar & Footer (all pages) | Height: 40px, transparent PNG |
+| `verpto-logo.png` | Navbar & Footer (all pages) | Height: 40px, transparent PNG |
 | `jashmine-profile.png` | Team card — Jashmine | 400×400 px, square |
 | `eijay-profile.png` | Team card — Eijay | 400×400 px, square |
 | `fira-1.png` | FIRA carousel slide 1 | 1200×675 px (16:9) |
@@ -205,7 +205,7 @@ This project is licensed under the **MIT License**.
 ```
 MIT License
 
-Copyright (c) 2026 JAE Collective (Jashmine Verdida & Eijay Pepito)
+Copyright (c) 2026 VERPTO (Jashmine Verdida & Eijay Pepito)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -230,7 +230,7 @@ SOFTWARE.
 
 <div align="center">
 
-**JAE Collective** &nbsp;·&nbsp; *"Your business should be Digitized!"*
+**VERPTO** &nbsp;·&nbsp; *"Your business should be Digitized!"*
 
 Built with ♥ by Jashmine & Eijay &nbsp;·&nbsp; © 2026
 

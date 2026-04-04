@@ -1,5 +1,5 @@
 /* ============================================================
-   JAE Collective — Custom Stylesheet
+   VERPTO — Custom Stylesheet
    Tech-forward, modern, corporate & sleek
    ============================================================ */
 
@@ -46,7 +46,7 @@ img { max-width: 100%; }
 
 /* ── Utility Classes ── */
 .text-accent    { color: var(--accent) !important; }
-.bg-primary-jae { background-color: var(--primary); }
+.bg-primary-verpto { background-color: var(--primary); }
 .section-pad    { padding: 96px 0; }
 .section-pad-sm { padding: 64px 0; }
 
@@ -229,7 +229,7 @@ img { max-width: 100%; }
 }
 
 /* ── Navbar ── */
-.navbar-jae {
+.navbar-verpto {
   background-color: var(--white);
   padding: 16px 0;
   border-bottom: 1px solid var(--border-color);
@@ -240,13 +240,13 @@ img { max-width: 100%; }
   transition: var(--transition);
 }
 
-.navbar-jae .navbar-brand {
+.navbar-verpto .navbar-brand {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.navbar-jae .brand-logo {
+.navbar-verpto .brand-logo {
   height: 40px;
   width: auto;
 }
@@ -263,7 +263,7 @@ img { max-width: 100%; }
   color: var(--accent);
 }
 
-.navbar-jae .nav-link {
+.navbar-verpto .nav-link {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
@@ -274,7 +274,7 @@ img { max-width: 100%; }
   position: relative;
 }
 
-.navbar-jae .nav-link::after {
+.navbar-verpto .nav-link::after {
   content: '';
   position: absolute;
   bottom: 2px;
@@ -287,12 +287,12 @@ img { max-width: 100%; }
   transition: transform 0.25s ease;
 }
 
-.navbar-jae .nav-link:hover::after,
-.navbar-jae .nav-link.active::after {
+.navbar-verpto .nav-link:hover::after,
+.navbar-verpto .nav-link.active::after {
   transform: scaleX(1);
 }
 
-.navbar-jae .nav-link:hover {
+.navbar-verpto .nav-link:hover {
   color: var(--accent) !important;
 }
 
@@ -302,7 +302,7 @@ img { max-width: 100%; }
 }
 
 /* ── Buttons ── */
-.btn-jae-primary {
+.btn-verpto-primary {
   background: var(--accent);
   color: var(--primary);
   font-family: 'Montserrat', sans-serif;
@@ -318,14 +318,14 @@ img { max-width: 100%; }
   box-shadow: 0 4px 20px rgba(45, 212, 191, 0.30);
 }
 
-.btn-jae-primary:hover {
+.btn-verpto-primary:hover {
   background: transparent;
   color: var(--accent);
   box-shadow: 0 6px 28px rgba(45, 212, 191, 0.45);
   transform: translateY(-2px);
 }
 
-.btn-jae-outline {
+.btn-verpto-outline {
   background: transparent;
   color: var(--primary);
   font-family: 'Montserrat', sans-serif;
@@ -340,13 +340,13 @@ img { max-width: 100%; }
   transition: var(--transition);
 }
 
-.btn-jae-outline:hover {
+.btn-verpto-outline:hover {
   background: var(--primary);
   color: var(--white);
   transform: translateY(-2px);
 }
 
-.btn-jae-outline-accent {
+.btn-verpto-outline-accent {
   background: transparent;
   color: var(--accent);
   font-family: 'Montserrat', sans-serif;
@@ -361,7 +361,7 @@ img { max-width: 100%; }
   transition: var(--transition);
 }
 
-.btn-jae-outline-accent:hover {
+.btn-verpto-outline-accent:hover {
   background: var(--accent);
   color: var(--primary);
   transform: translateY(-2px);
@@ -1306,13 +1306,13 @@ img { max-width: 100%; }
 }
 
 /* Indicators */
-.carousel-indicators-jae {
+.carousel-indicators-verpto {
   bottom: 18px !important;
   margin: 0 !important;
   gap: 6px;
 }
 
-.carousel-indicators-jae [data-bs-target] {
+.carousel-indicators-verpto [data-bs-target] {
   width: 28px !important;
   height: 3px !important;
   border-radius: 3px !important;
@@ -1323,13 +1323,13 @@ img { max-width: 100%; }
   margin: 0 !important;
 }
 
-.carousel-indicators-jae .active {
+.carousel-indicators-verpto .active {
   background-color: var(--accent) !important;
   width: 52px !important;
 }
 
 /* Prev / Next buttons — revealed on hover */
-.jae-carousel-btn {
+.verpto-carousel-btn {
   position: absolute !important;
   top: 50% !important;
   transform: translateY(-50%) !important;
@@ -1352,14 +1352,14 @@ img { max-width: 100%; }
   font-size: 1rem;
 }
 
-.jae-carousel-btn.jae-prev { left: 18px !important; }
-.jae-carousel-btn.jae-next { right: 18px !important; }
+.verpto-carousel-btn.verpto-prev { left: 18px !important; }
+.verpto-carousel-btn.verpto-next { right: 18px !important; }
 
-.browser-frame-wrap:hover .jae-carousel-btn {
+.browser-frame-wrap:hover .verpto-carousel-btn {
   opacity: 1 !important;
 }
 
-.jae-carousel-btn:hover {
+.verpto-carousel-btn:hover {
   background: var(--accent) !important;
   border-color: var(--accent) !important;
   color: var(--primary) !important;
@@ -1368,7 +1368,7 @@ img { max-width: 100%; }
 
 @media (max-width: 768px) {
   .browser-frame-wrap .carousel-item img { height: 180px; }
-  .jae-carousel-btn { opacity: 1 !important; }
+  .verpto-carousel-btn { opacity: 1 !important; }
   .browser-address-bar { font-size: 0.68rem; }
 }
 
@@ -1553,5 +1553,5 @@ img { max-width: 100%; }
 
 @media (max-width: 576px) {
   .hero-headline { letter-spacing: -0.02em; }
-  .btn-jae-primary { width: 100%; text-align: center; }
+  .btn-verpto-primary { width: 100%; text-align: center; }
 }
