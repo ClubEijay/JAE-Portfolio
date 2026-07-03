@@ -43,7 +43,9 @@
         <ul class="navbar-nav ms-auto gap-1 align-items-lg-center py-3 py-lg-0">
           <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           <li class="nav-item ms-lg-3">
             <a class="btn-verpto-primary" href="#contact"
@@ -105,18 +107,18 @@
           <!-- Social proof strip -->
           <div class="d-flex flex-wrap gap-4 mt-5 pt-2">
             <div>
-              <span style="color:var(--accent);font-size:1.6rem;font-weight:900;font-family:'Montserrat',sans-serif;">3+</span>
-              <span style="color:rgba(255,255,255,0.55);font-size:0.8rem;display:block;margin-top:2px;letter-spacing:0.06em;">Projects Launched</span>
+              <span class="hero-stat-num">3+</span>
+              <span class="hero-stat-label">Projects Launched</span>
             </div>
-            <div style="width:1px;background:rgba(255,255,255,0.12);"></div>
+            <div class="hero-vdivider"></div>
             <div>
-              <span style="color:var(--accent);font-size:1.6rem;font-weight:900;font-family:'Montserrat',sans-serif;">2</span>
-              <span style="color:rgba(255,255,255,0.55);font-size:0.8rem;display:block;margin-top:2px;letter-spacing:0.06em;">Founders</span>
+              <span class="hero-stat-num">2</span>
+              <span class="hero-stat-label">Founders</span>
             </div>
-            <div style="width:1px;background:rgba(255,255,255,0.12);"></div>
+            <div class="hero-vdivider"></div>
             <div>
-              <span style="color:var(--accent);font-size:1.6rem;font-weight:900;font-family:'Montserrat',sans-serif;">100%</span>
-              <span style="color:rgba(255,255,255,0.55);font-size:0.8rem;display:block;margin-top:2px;letter-spacing:0.06em;">Passion-Driven</span>
+              <span class="hero-stat-num">100%</span>
+              <span class="hero-stat-label">Passion-Driven</span>
             </div>
           </div>
         </div>
@@ -309,63 +311,143 @@
         </p>
       </div>
 
-      <div class="text-center fade-up">
+      <div class="row g-4">
 
-        <!-- Back End & Data Processing -->
-        <div class="mb-4">
-          <p class="text-muted mb-3" style="font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;">Back End &amp; Data Processing</p>
-          <span class="skill-badge"><i class="bi bi-filetype-py"></i> Python</span>
-          <span class="skill-badge"><i class="bi bi-server"></i> Node.js</span>
-          <span class="skill-badge"><i class="bi bi-lightning-fill"></i> FastAPI</span>
-          <span class="skill-badge"><i class="bi bi-cup-hot-fill"></i> Flask</span>
-          <span class="skill-badge"><i class="bi bi-braces"></i> Express.js</span>
-          <span class="skill-badge"><i class="bi bi-layers-fill"></i> Strapi</span>
-          <span class="skill-badge"><i class="bi bi-google"></i> Google Cloud Doc AI</span>
-          <span class="skill-badge"><i class="bi bi-cloud"></i> AWS Textract</span>
-          <span class="skill-badge"><i class="bi bi-cloud-check-fill"></i> Azure Form Recognizer</span>
-          <span class="skill-badge"><i class="bi bi-eye-fill"></i> Tesseract OCR</span>
-          <span class="skill-badge"><i class="bi bi-camera-fill"></i> OpenCV</span>
-          <span class="skill-badge"><i class="bi bi-file-earmark-pdf-fill"></i> PyPDF2</span>
-          <span class="skill-badge"><i class="bi bi-stars"></i> OpenAI API</span>
-          <span class="skill-badge"><i class="bi bi-link-45deg"></i> LangChain</span>
+        <!-- Console 01 · Back End & Data Processing -->
+        <div class="col-lg-7 fade-up">
+          <div class="holo-scene">
+            <article class="holo-panel" data-tilt>
+              <div class="holo-bg">
+                <div class="holo-glow"></div>
+                <svg class="holo-hexmark" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <polygon points="100,10 190,55 190,145 100,190 10,145 10,55"
+                           stroke="#2DD4BF" stroke-width="2" fill="none"/>
+                </svg>
+              </div>
+              <header class="holo-head">
+                <div class="holo-icon"><i class="bi bi-cpu-fill"></i></div>
+                <div>
+                  <span class="holo-index">Console 01</span>
+                  <h3 class="holo-title">Back End &amp; Data Processing</h3>
+                </div>
+                <span class="holo-count">14</span>
+              </header>
+              <div class="holo-chips">
+                <span class="holo-chip"><i class="bi bi-filetype-py"></i> Python</span>
+                <span class="holo-chip"><i class="bi bi-server"></i> Node.js</span>
+                <span class="holo-chip"><i class="bi bi-lightning-fill"></i> FastAPI</span>
+                <span class="holo-chip"><i class="bi bi-cup-hot-fill"></i> Flask</span>
+                <span class="holo-chip"><i class="bi bi-braces"></i> Express.js</span>
+                <span class="holo-chip"><i class="bi bi-layers-fill"></i> Strapi</span>
+                <span class="holo-chip"><i class="bi bi-eye-fill"></i> Tesseract OCR</span>
+                <span class="holo-chip"><i class="bi bi-camera-fill"></i> OpenCV</span>
+                <span class="holo-chip"><i class="bi bi-file-earmark-pdf-fill"></i> PyPDF2</span>
+                <span class="holo-chip holo-chip-ai"><i class="bi bi-google"></i> Google Cloud Doc AI</span>
+                <span class="holo-chip holo-chip-ai"><i class="bi bi-cloud"></i> AWS Textract</span>
+                <span class="holo-chip holo-chip-ai"><i class="bi bi-cloud-check-fill"></i> Azure Form Recognizer</span>
+                <span class="holo-chip holo-chip-ai"><i class="bi bi-stars"></i> OpenAI API</span>
+                <span class="holo-chip holo-chip-ai"><i class="bi bi-link-45deg"></i> LangChain</span>
+              </div>
+            </article>
+          </div>
         </div>
 
-        <!-- Front End -->
-        <div class="mb-4">
-          <p class="text-muted mb-3" style="font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;">Front End</p>
-          <span class="skill-badge"><i class="bi bi-filetype-html"></i> HTML5</span>
-          <span class="skill-badge"><i class="bi bi-filetype-css"></i> CSS3</span>
-          <span class="skill-badge"><i class="bi bi-filetype-js"></i> JavaScript</span>
-          <span class="skill-badge"><i class="bi bi-code-slash"></i> React.js</span>
-          <span class="skill-badge"><i class="bi bi-arrow-right-circle-fill"></i> Next.js</span>
-          <span class="skill-badge"><i class="bi bi-box-seam"></i> Angular</span>
-          <span class="skill-badge"><i class="bi bi-bootstrap-fill"></i> Bootstrap</span>
-          <span class="skill-badge"><i class="bi bi-wind"></i> Tailwind CSS</span>
-          <span class="skill-badge"><i class="bi bi-layout-sidebar-inset"></i> Streamlit</span>
-          <span class="skill-badge"><i class="bi bi-play-circle-fill"></i> Gradio</span>
+        <!-- Console 02 · Front End -->
+        <div class="col-lg-5 fade-up">
+          <div class="holo-scene">
+            <article class="holo-panel" data-tilt>
+              <div class="holo-bg">
+                <div class="holo-glow"></div>
+                <svg class="holo-hexmark" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <polygon points="100,10 190,55 190,145 100,190 10,145 10,55"
+                           stroke="#2DD4BF" stroke-width="2" fill="none"/>
+                </svg>
+              </div>
+              <header class="holo-head">
+                <div class="holo-icon"><i class="bi bi-window-sidebar"></i></div>
+                <div>
+                  <span class="holo-index">Console 02</span>
+                  <h3 class="holo-title">Front End</h3>
+                </div>
+                <span class="holo-count">10</span>
+              </header>
+              <div class="holo-chips">
+                <span class="holo-chip"><i class="bi bi-filetype-html"></i> HTML5</span>
+                <span class="holo-chip"><i class="bi bi-filetype-css"></i> CSS3</span>
+                <span class="holo-chip"><i class="bi bi-filetype-js"></i> JavaScript</span>
+                <span class="holo-chip"><i class="bi bi-code-slash"></i> React.js</span>
+                <span class="holo-chip"><i class="bi bi-arrow-right-circle-fill"></i> Next.js</span>
+                <span class="holo-chip"><i class="bi bi-box-seam"></i> Angular</span>
+                <span class="holo-chip"><i class="bi bi-bootstrap-fill"></i> Bootstrap</span>
+                <span class="holo-chip"><i class="bi bi-wind"></i> Tailwind CSS</span>
+                <span class="holo-chip"><i class="bi bi-layout-sidebar-inset"></i> Streamlit</span>
+                <span class="holo-chip"><i class="bi bi-play-circle-fill"></i> Gradio</span>
+              </div>
+            </article>
+          </div>
         </div>
 
-        <!-- Database -->
-        <div class="mb-4">
-          <p class="text-muted mb-3" style="font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;">Database</p>
-          <span class="skill-badge"><i class="bi bi-hdd-fill"></i> PostgreSQL</span>
-          <span class="skill-badge"><i class="bi bi-database-fill"></i> MySQL</span>
-          <span class="skill-badge"><i class="bi bi-database-fill"></i> MongoDB</span>
-          <span class="skill-badge"><i class="bi bi-box-arrow-in-up-right"></i> Supabase</span>
-          <span class="skill-badge"><i class="bi bi-fire"></i> Firebase</span>
+        <!-- Console 03 · Database -->
+        <div class="col-lg-5 fade-up">
+          <div class="holo-scene">
+            <article class="holo-panel" data-tilt>
+              <div class="holo-bg">
+                <div class="holo-glow"></div>
+                <svg class="holo-hexmark" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <polygon points="100,10 190,55 190,145 100,190 10,145 10,55"
+                           stroke="#2DD4BF" stroke-width="2" fill="none"/>
+                </svg>
+              </div>
+              <header class="holo-head">
+                <div class="holo-icon"><i class="bi bi-database-fill"></i></div>
+                <div>
+                  <span class="holo-index">Console 03</span>
+                  <h3 class="holo-title">Database</h3>
+                </div>
+                <span class="holo-count">05</span>
+              </header>
+              <div class="holo-chips">
+                <span class="holo-chip"><i class="bi bi-hdd-fill"></i> PostgreSQL</span>
+                <span class="holo-chip"><i class="bi bi-database-fill"></i> MySQL</span>
+                <span class="holo-chip"><i class="bi bi-database-fill"></i> MongoDB</span>
+                <span class="holo-chip holo-chip-cloud"><i class="bi bi-box-arrow-in-up-right"></i> Supabase</span>
+                <span class="holo-chip holo-chip-cloud"><i class="bi bi-fire"></i> Firebase</span>
+              </div>
+            </article>
+          </div>
         </div>
 
-        <!-- Design & Tools -->
-        <div>
-          <p class="text-muted mb-3" style="font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:700;">Design &amp; Tools</p>
-          <span class="skill-badge"><i class="bi bi-vector-pen"></i> Figma</span>
-          <span class="skill-badge"><i class="bi bi-phone-fill"></i> Responsive Design</span>
-          <span class="skill-badge"><i class="bi bi-git"></i> Git</span>
-          <span class="skill-badge"><i class="bi bi-github"></i> GitHub</span>
-          <span class="skill-badge"><i class="bi bi-box-fill"></i> Docker</span>
-          <span class="skill-badge"><i class="bi bi-triangle-fill"></i> Vercel</span>
-          <span class="skill-badge"><i class="bi bi-arrow-up-circle-fill"></i> Render</span>
-          <span class="skill-badge"><i class="bi bi-cloud-upload-fill"></i> Heroku</span>
+        <!-- Console 04 · Design & Tools -->
+        <div class="col-lg-7 fade-up">
+          <div class="holo-scene">
+            <article class="holo-panel" data-tilt>
+              <div class="holo-bg">
+                <div class="holo-glow"></div>
+                <svg class="holo-hexmark" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <polygon points="100,10 190,55 190,145 100,190 10,145 10,55"
+                           stroke="#2DD4BF" stroke-width="2" fill="none"/>
+                </svg>
+              </div>
+              <header class="holo-head">
+                <div class="holo-icon"><i class="bi bi-tools"></i></div>
+                <div>
+                  <span class="holo-index">Console 04</span>
+                  <h3 class="holo-title">Design &amp; Tools</h3>
+                </div>
+                <span class="holo-count">08</span>
+              </header>
+              <div class="holo-chips">
+                <span class="holo-chip"><i class="bi bi-vector-pen"></i> Figma</span>
+                <span class="holo-chip"><i class="bi bi-phone-fill"></i> Responsive Design</span>
+                <span class="holo-chip"><i class="bi bi-git"></i> Git</span>
+                <span class="holo-chip"><i class="bi bi-github"></i> GitHub</span>
+                <span class="holo-chip holo-chip-cloud"><i class="bi bi-box-fill"></i> Docker</span>
+                <span class="holo-chip holo-chip-cloud"><i class="bi bi-triangle-fill"></i> Vercel</span>
+                <span class="holo-chip holo-chip-cloud"><i class="bi bi-arrow-up-circle-fill"></i> Render</span>
+                <span class="holo-chip holo-chip-cloud"><i class="bi bi-cloud-upload-fill"></i> Heroku</span>
+              </div>
+            </article>
+          </div>
         </div>
 
       </div>
@@ -392,7 +474,7 @@
         </div>
         <div class="col-6 col-md-3">
           <div class="stat-item">
-            <span class="stat-number">10+</span>
+            <span class="stat-number">35+</span>
             <span class="stat-label">Technologies</span>
           </div>
         </div>
@@ -492,6 +574,154 @@
   </section>
 
   <!-- ══════════════════════════════════════════════
+       ACHIEVEMENTS SECTION — Trophy Vault
+       Placeholder tiles: swap .ach-media contents for
+       <img> tags once high-res photos are available.
+  ══════════════════════════════════════════════ -->
+  <section class="achievements-section section-pad" id="achievements">
+    <div class="container" style="position:relative; z-index:1;">
+
+      <div class="text-center mb-5 fade-up">
+        <span class="section-label">Milestones</span>
+        <h2 class="section-title section-title--light">Achievements</h2>
+        <p class="section-sub section-sub--light">
+          Recognition, launches, and wins along the way. Full gallery coming soon.
+        </p>
+      </div>
+
+      <div class="row g-4 align-items-start">
+
+        <!-- Featured achievement -->
+        <div class="col-lg-6 fade-up">
+          <article class="ach-card ach-card--featured" data-tilt data-tilt-max="4">
+            <span class="ach-badge">Coming Soon</span>
+            <div class="ach-media">
+              <i class="bi bi-image"></i>
+              <span>High-res photo incoming</span>
+            </div>
+            <div class="ach-head">
+              <div class="ach-medal"><i class="bi bi-trophy-fill"></i></div>
+              <div>
+                <h3 class="ach-title">Featured Milestone</h3>
+                <span class="ach-date">Date · TBA</span>
+              </div>
+            </div>
+            <p class="ach-desc">
+              Our proudest moment will live here — the story, the photos, and what
+              it took to get there. Watch this space.
+            </p>
+          </article>
+        </div>
+
+        <!-- Supporting tiles -->
+        <div class="col-md-6 col-lg-3 fade-up">
+          <article class="ach-card" data-tilt data-tilt-max="4">
+            <div class="ach-media">
+              <i class="bi bi-image"></i>
+              <span>Photo incoming</span>
+            </div>
+            <div class="ach-head">
+              <div class="ach-medal"><i class="bi bi-award-fill"></i></div>
+              <div>
+                <h3 class="ach-title">Recognition</h3>
+                <span class="ach-date">Date · TBA</span>
+              </div>
+            </div>
+            <div class="ach-line"></div>
+            <div class="ach-line ach-line--70"></div>
+            <div class="ach-line ach-line--45"></div>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-3 fade-up">
+          <article class="ach-card ach-stagger" data-tilt data-tilt-max="4">
+            <div class="ach-media">
+              <i class="bi bi-image"></i>
+              <span>Photo incoming</span>
+            </div>
+            <div class="ach-head">
+              <div class="ach-medal"><i class="bi bi-rocket-takeoff-fill"></i></div>
+              <div>
+                <h3 class="ach-title">Launch</h3>
+                <span class="ach-date">Date · TBA</span>
+              </div>
+            </div>
+            <div class="ach-line"></div>
+            <div class="ach-line ach-line--70"></div>
+            <div class="ach-line ach-line--45"></div>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-3 fade-up">
+          <article class="ach-card" data-tilt data-tilt-max="4">
+            <div class="ach-media">
+              <i class="bi bi-image"></i>
+              <span>Photo incoming</span>
+            </div>
+            <div class="ach-head">
+              <div class="ach-medal"><i class="bi bi-star-fill"></i></div>
+              <div>
+                <h3 class="ach-title">Certification</h3>
+                <span class="ach-date">Date · TBA</span>
+              </div>
+            </div>
+            <div class="ach-line"></div>
+            <div class="ach-line ach-line--70"></div>
+            <div class="ach-line ach-line--45"></div>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-3 fade-up">
+          <article class="ach-card ach-stagger" data-tilt data-tilt-max="4">
+            <div class="ach-media">
+              <i class="bi bi-image"></i>
+              <span>Photo incoming</span>
+            </div>
+            <div class="ach-head">
+              <div class="ach-medal"><i class="bi bi-people-fill"></i></div>
+              <div>
+                <h3 class="ach-title">Community</h3>
+                <span class="ach-date">Date · TBA</span>
+              </div>
+            </div>
+            <div class="ach-line"></div>
+            <div class="ach-line ach-line--70"></div>
+            <div class="ach-line ach-line--45"></div>
+          </article>
+        </div>
+
+        <!-- CTA tile balances the grid's second row -->
+        <div class="col-lg-6 fade-up">
+          <article class="ach-card d-flex flex-column justify-content-center text-center" data-tilt data-tilt-max="4">
+            <div class="ach-head justify-content-center">
+              <div class="ach-medal"><i class="bi bi-lightning-charge-fill"></i></div>
+              <div class="text-start">
+                <h3 class="ach-title">Your Project Could Be Next</h3>
+                <span class="ach-date">The next milestone is yours</span>
+              </div>
+            </div>
+            <p class="ach-desc mb-4">
+              Every achievement here started as a conversation. Let's talk about
+              what we can build — and win — together.
+            </p>
+            <div>
+              <a href="#contact" class="btn-verpto-primary" style="padding:12px 30px;font-size:0.85rem;">
+                Start the Conversation &nbsp;<i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-5 fade-up">
+        <span class="ach-more">&gt; loading more milestones…</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
        CONTACT SECTION
   ══════════════════════════════════════════════ -->
   <section class="section-pad" id="contact"
@@ -519,35 +749,26 @@
           </p>
 
           <div class="d-flex flex-column gap-3">
-            <a href="mailto:JashmineVerdida08@gmail.com" class="d-flex align-items-center gap-3"
-               style="color:var(--primary);font-size:0.9rem;text-decoration:none;">
-              <div style="width:42px;height:42px;border-radius:10px;background:var(--primary);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                <i class="bi bi-envelope-fill" style="color:var(--accent);font-size:1rem;"></i>
-              </div>
+            <a href="mailto:JashmineVerdida08@gmail.com" class="contact-line">
+              <div class="contact-icon-box"><i class="bi bi-envelope-fill"></i></div>
               <div>
-                <div style="font-weight:700;font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);">Jashmine</div>
+                <div class="contact-line-label">Jashmine</div>
                 JashmineVerdida08@gmail.com
               </div>
             </a>
 
-            <a href="mailto:eijay.pepito8@gmail.com" class="d-flex align-items-center gap-3"
-               style="color:var(--primary);font-size:0.9rem;text-decoration:none;">
-              <div style="width:42px;height:42px;border-radius:10px;background:var(--primary);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                <i class="bi bi-envelope-fill" style="color:var(--accent);font-size:1rem;"></i>
-              </div>
+            <a href="mailto:eijay.pepito8@gmail.com" class="contact-line">
+              <div class="contact-icon-box"><i class="bi bi-envelope-fill"></i></div>
               <div>
-                <div style="font-weight:700;font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);">Eijay</div>
+                <div class="contact-line-label">Eijay</div>
                 eijay.pepito8@gmail.com
               </div>
             </a>
 
-            <a href="tel:+639569505102" class="d-flex align-items-center gap-3"
-               style="color:var(--primary);font-size:0.9rem;text-decoration:none;">
-              <div style="width:42px;height:42px;border-radius:10px;background:var(--primary);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                <i class="bi bi-telephone-fill" style="color:var(--accent);font-size:1rem;"></i>
-              </div>
+            <a href="tel:+639569505102" class="contact-line">
+              <div class="contact-icon-box"><i class="bi bi-telephone-fill"></i></div>
               <div>
-                <div style="font-weight:700;font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);">Phone</div>
+                <div class="contact-line-label">Phone</div>
                 0956 950 5102 &nbsp;/&nbsp; 0993 266 2346
               </div>
             </a>
@@ -561,40 +782,24 @@
             <form id="contactForm">
               <div class="row g-3">
                 <div class="col-md-6">
-                  <label class="form-label"
-                         style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);">
-                    Full Name
-                  </label>
-                  <input type="text" name="from_name" id="cf_name" class="form-control" required
-                         placeholder="Juan Dela Cruz"
-                         style="border-radius:8px;border:1.5px solid var(--border-color);padding:12px 16px;font-size:0.9rem;"/>
+                  <label class="form-label form-label-verpto" for="cf_name">Full Name</label>
+                  <input type="text" name="from_name" id="cf_name" class="form-control verpto-input" required
+                         placeholder="Juan Dela Cruz"/>
                 </div>
                 <div class="col-md-6">
-                  <label class="form-label"
-                         style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);">
-                    Email Address
-                  </label>
-                  <input type="email" name="from_email" id="cf_email" class="form-control" required
-                         placeholder="you@example.com"
-                         style="border-radius:8px;border:1.5px solid var(--border-color);padding:12px 16px;font-size:0.9rem;"/>
+                  <label class="form-label form-label-verpto" for="cf_email">Email Address</label>
+                  <input type="email" name="from_email" id="cf_email" class="form-control verpto-input" required
+                         placeholder="you@example.com"/>
                 </div>
                 <div class="col-12">
-                  <label class="form-label"
-                         style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);">
-                    Subject
-                  </label>
-                  <input type="text" name="subject" id="cf_subject" class="form-control" required
-                         placeholder="I need a website for my business"
-                         style="border-radius:8px;border:1.5px solid var(--border-color);padding:12px 16px;font-size:0.9rem;"/>
+                  <label class="form-label form-label-verpto" for="cf_subject">Subject</label>
+                  <input type="text" name="subject" id="cf_subject" class="form-control verpto-input" required
+                         placeholder="I need a website for my business"/>
                 </div>
                 <div class="col-12">
-                  <label class="form-label"
-                         style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.78rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);">
-                    Message
-                  </label>
-                  <textarea class="form-control" name="message" id="cf_message" rows="5" required
-                            placeholder="Tell us about your project..."
-                            style="border-radius:8px;border:1.5px solid var(--border-color);padding:12px 16px;font-size:0.9rem;resize:vertical;"></textarea>
+                  <label class="form-label form-label-verpto" for="cf_message">Message</label>
+                  <textarea class="form-control verpto-input" name="message" id="cf_message" rows="5" required
+                            placeholder="Tell us about your project..." style="resize:vertical;"></textarea>
                 </div>
                 <div class="col-12">
                   <button type="submit" id="cfSubmitBtn" class="btn-verpto-primary w-100" style="padding:14px;">
@@ -632,22 +837,15 @@
           <div class="footer-brand">VERPTO</div>
           <p class="footer-tagline">"Your business should be Digitized!"</p>
           <div class="d-flex gap-2">
-            <a href="mailto:JashmineVerdida08@gmail.com"
-               style="width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.6);transition:all 0.3s;"
-               onmouseover="this.style.background='var(--accent)';this.style.color='var(--primary)';"
-               onmouseout="this.style.background='rgba(255,255,255,0.08)';this.style.color='rgba(255,255,255,0.6)';">
+            <a href="mailto:JashmineVerdida08@gmail.com" class="footer-social" aria-label="Email VERPTO">
               <i class="bi bi-envelope"></i>
             </a>
-            <a href="https://www.linkedin.com/in/jashmine-verdida-820a56352/" target="_blank"
-               style="width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.6);transition:all 0.3s;"
-               onmouseover="this.style.background='var(--accent)';this.style.color='var(--primary)';"
-               onmouseout="this.style.background='rgba(255,255,255,0.08)';this.style.color='rgba(255,255,255,0.6)';">
+            <a href="https://www.linkedin.com/in/jashmine-verdida-820a56352/" target="_blank" rel="noopener"
+               class="footer-social" aria-label="Jashmine on LinkedIn">
               <i class="bi bi-linkedin"></i>
             </a>
-            <a href="https://www.linkedin.com/in/eijay-pepito-107110355/" target="_blank"
-               style="width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.6);transition:all 0.3s;"
-               onmouseover="this.style.background='var(--accent)';this.style.color='var(--primary)';"
-               onmouseout="this.style.background='rgba(255,255,255,0.08)';this.style.color='rgba(255,255,255,0.6)';">
+            <a href="https://www.linkedin.com/in/eijay-pepito-107110355/" target="_blank" rel="noopener"
+               class="footer-social" aria-label="Eijay on LinkedIn">
               <i class="bi bi-person-badge-fill"></i>
             </a>
           </div>
@@ -659,7 +857,9 @@
           <ul class="footer-link-list">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Us</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#achievements">Achievements</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
@@ -753,49 +953,99 @@
     });
   </script>
 
-  <!-- Custom JS: Scroll animations + smooth nav highlighting -->
+  <!-- Custom JS: scroll animations, nav highlighting, 3D tilt engine -->
   <script>
-    // Intersection Observer for .fade-up animations
-    const fadeEls = document.querySelectorAll('.fade-up');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 80);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    fadeEls.forEach(el => observer.observe(el));
+    document.addEventListener('DOMContentLoaded', () => {
 
-    // Stagger children within same parent
-    document.querySelectorAll('.row .fade-up').forEach((el, i) => {
-      el.style.transitionDelay = `${(i % 3) * 0.10}s`;
-    });
+      // ── Intersection Observer for .fade-up animations ──
+      const fadeEls = document.querySelectorAll('.fade-up');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => entry.target.classList.add('visible'), i * 80);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      fadeEls.forEach(el => observer.observe(el));
 
-    // Active nav link on scroll
-    const sections = document.querySelectorAll('section[id], div[id]');
-    const navLinks = document.querySelectorAll('.navbar-verpto .nav-link');
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(sec => {
-        if (window.scrollY >= sec.offsetTop - 80) current = sec.id;
+      // Stagger children within same parent
+      document.querySelectorAll('.row .fade-up').forEach((el, i) => {
+        el.style.transitionDelay = `${(i % 3) * 0.10}s`;
       });
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
-      });
-    });
 
-    // Navbar shadow on scroll
-    const navbar = document.querySelector('.navbar-verpto');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 20) {
-        navbar.style.boxShadow = '0 4px 30px rgba(26,37,48,0.12)';
-      } else {
-        navbar.style.boxShadow = '0 2px 20px rgba(26,37,48,0.06)';
+      // ── Single passive scroll handler: nav highlight, navbar shadow,
+      //    business-card float visibility ──
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.navbar-verpto .nav-link');
+      const navbar   = document.querySelector('.navbar-verpto');
+      const bcFloat  = document.getElementById('bcFloat');
+      let scrollRaf = null;
+
+      const onScroll = () => {
+        scrollRaf = null;
+        const y = window.scrollY;
+
+        let current = '';
+        sections.forEach(sec => {
+          if (y >= sec.offsetTop - 80) current = sec.id;
+        });
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+        });
+
+        navbar.style.boxShadow = y > 20
+          ? '0 4px 30px rgba(26,37,48,0.12)'
+          : '0 2px 20px rgba(26,37,48,0.06)';
+
+        if (bcFloat) bcFloat.classList.toggle('bc-float--visible', y > 300);
+      };
+
+      window.addEventListener('scroll', () => {
+        if (!scrollRaf) scrollRaf = requestAnimationFrame(onScroll);
+      }, { passive: true });
+      onScroll();
+
+      // ── 3D Tilt Engine ──
+      // Drives --rx/--ry (rotation) and --mx/--my (cursor spotlight) on
+      // [data-tilt] elements. Skipped entirely on touch devices and for
+      // users who prefer reduced motion.
+      const fine     = window.matchMedia('(hover: hover) and (pointer: fine)');
+      const noMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (fine.matches && !noMotion.matches) {
+        document.querySelectorAll('[data-tilt]').forEach(panel => {
+          const max = parseFloat(panel.dataset.tiltMax) || 7;
+          let raf = null, px = 0.5, py = 0.5;
+
+          const render = () => {
+            raf = null;
+            panel.style.setProperty('--rx', ((0.5 - py) * max * 2).toFixed(2) + 'deg');
+            panel.style.setProperty('--ry', ((px - 0.5) * max * 2).toFixed(2) + 'deg');
+            panel.style.setProperty('--mx', (px * 100).toFixed(1) + '%');
+            panel.style.setProperty('--my', (py * 100).toFixed(1) + '%');
+          };
+
+          panel.addEventListener('pointerenter', () => {
+            panel.classList.remove('tilt-settle');
+          });
+
+          panel.addEventListener('pointermove', (e) => {
+            const r = panel.getBoundingClientRect();
+            px = (e.clientX - r.left) / r.width;
+            py = (e.clientY - r.top) / r.height;
+            if (!raf) raf = requestAnimationFrame(render);
+          });
+
+          panel.addEventListener('pointerleave', () => {
+            if (raf) { cancelAnimationFrame(raf); raf = null; }
+            panel.classList.add('tilt-settle');
+            panel.style.setProperty('--rx', '0deg');
+            panel.style.setProperty('--ry', '0deg');
+          });
+        });
       }
-    });
 
+    });
   </script>
 
   <script>
@@ -806,14 +1056,7 @@
       const bcCard    = document.getElementById('bcCard');
       const bcClose   = document.getElementById('bcClose');
 
-      // Show float widget after scrolling past hero
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-          bcFloat.classList.add('bc-float--visible');
-        } else {
-          bcFloat.classList.remove('bc-float--visible');
-        }
-      });
+      // Float visibility is handled by the consolidated scroll handler above.
 
       // Open modal
       bcFloat.addEventListener('click', () => {
