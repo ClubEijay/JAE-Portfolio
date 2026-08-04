@@ -25,8 +25,8 @@
   <nav class="navbar navbar-verpto navbar-expand-lg">
     <div class="container">
 
-      <!-- Brand / Logo -->
-      <a class="navbar-brand" href="index.html">
+      <!-- Brand / Logo — data-tilt gives it the same cursor-tracked 3D as the holo panels -->
+      <a class="navbar-brand" href="index.html" data-tilt data-tilt-max="14">
         <img src="images/VERPTO-logo.png" alt="VERPTO Logo" class="brand-logo"
              onerror="this.style.display='none'">
       </a>
@@ -43,6 +43,7 @@
         <ul class="navbar-nav ms-auto gap-1 align-items-lg-center py-3 py-lg-0">
           <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
@@ -88,10 +89,10 @@
         <div class="col-lg-7">
           <span class="hero-eyebrow">&#9670; Web Development Agency</span>
           <h1 class="hero-headline">
-            Need a<br>
-            <span class="highlight">Website?</span>
+            Need <span class="hero-fade" id="heroArticle">a</span><br>
+            <span class="highlight hero-fade" id="heroWord">Website?</span>
           </h1>
-          <p class="hero-subheadline">
+          <p class="hero-subheadline hero-fade" id="heroSub">
             Let's get your business Online. We craft modern, high-performance web
             experiences that drive real results.
           </p>
@@ -147,6 +148,11 @@
 
       </div>
     </div>
+
+    <!-- Scroll-down indicator -->
+    <a href="#about" class="hero-scroll d-none d-md-flex" aria-label="Scroll to About section">
+      <span></span>
+    </a>
   </section>
 
   <!-- Wave Divider -->
@@ -289,6 +295,103 @@
                 <i class="bi bi-linkedin me-1"></i> LinkedIn
               </a>
             </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave Divider: About (white) → Services (light) -->
+  <div class="wave-divider wave-divider--flip" style="background:var(--white);">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none"
+         xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;">
+      <path d="M0,40 C360,0 1080,80 1440,20 L1440,60 L0,60 Z"
+            style="fill:var(--light-bg);"/>
+    </svg>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       SERVICES SECTION
+  ══════════════════════════════════════════════ -->
+  <section class="services-section section-pad" id="services">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="text-center mb-5 fade-up">
+        <span class="section-label">Our Services</span>
+        <h2 class="section-title">Everything You Need to Go Digital</h2>
+        <p class="section-sub">
+          From the first sketch to the final deploy — we handle the full journey of
+          putting your business online.
+        </p>
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-vector-pen"></i></div>
+            <h3 class="service-title">Web Design</h3>
+            <p class="service-desc">
+              Clean, conversion-focused interfaces designed in Figma. Every pixel
+              serves a purpose — on desktop, tablet, and mobile.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-code-slash"></i></div>
+            <h3 class="service-title">Web Development</h3>
+            <p class="service-desc">
+              Fast, secure, hand-crafted websites and web apps built on modern
+              stacks like React, Next.js, and Node.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-cart3"></i></div>
+            <h3 class="service-title">E-Commerce</h3>
+            <p class="service-desc">
+              Online stores that actually sell — product catalogs, secure checkout,
+              and payment integration tailored to your business.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-stars"></i></div>
+            <h3 class="service-title">AI Integration</h3>
+            <p class="service-desc">
+              Chatbots, document intelligence, and OCR automation powered by
+              OpenAI, LangChain, and cloud AI services.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-graph-up-arrow"></i></div>
+            <h3 class="service-title">SEO &amp; Performance</h3>
+            <p class="service-desc">
+              Lighthouse-friendly builds, on-page SEO, and speed optimization so
+              customers actually find you — and stay.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4 fade-up">
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-shield-check"></i></div>
+            <h3 class="service-title">Hosting &amp; Care</h3>
+            <p class="service-desc">
+              Deployment, domains, SSL, and ongoing maintenance — we keep your
+              site online, updated, and secure.
+            </p>
           </div>
         </div>
 
@@ -454,6 +557,15 @@
     </div>
   </section>
 
+  <!-- Wave Divider: Skills (light) → Stats (dark) -->
+  <div class="wave-divider" style="background:var(--light-bg);">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none"
+         xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;">
+      <path d="M0,40 C360,0 1080,80 1440,20 L1440,60 L0,60 Z"
+            style="fill:var(--primary);"/>
+    </svg>
+  </div>
+
   <!-- ══════════════════════════════════════════════
        STATS STRIP
   ══════════════════════════════════════════════ -->
@@ -488,6 +600,15 @@
     </div>
   </div>
 
+  <!-- Wave Divider: Stats (dark) → Projects (white) -->
+  <div class="wave-divider wave-divider--flip" style="background:var(--primary);">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none"
+         xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;">
+      <path d="M0,40 C360,0 1080,80 1440,20 L1440,60 L0,60 Z"
+            style="fill:var(--white);"/>
+    </svg>
+  </div>
+
   <!-- ══════════════════════════════════════════════
        PROJECTS SECTION
   ══════════════════════════════════════════════ -->
@@ -501,77 +622,218 @@
         </p>
       </div>
 
-      <div class="row g-4">
+      <!-- Project carousel: character-select style — 3 bright "active" cards
+           centered, dimmed peeks bleeding off each edge, infinite loop (no
+           first/last card). Add new projects as .project-carousel-item
+           blocks inside #projStage; the JS windowing logic in js/site.js
+           handles any item count. -->
+      <div class="project-carousel-wrap fade-up">
+       <div class="project-carousel-frame">
 
-        <!-- Project FIRA -->
-        <div class="col-md-6 col-lg-4 fade-up">
-          <div class="project-card">
-            <div class="project-card-img-wrap">
-              <img src="images/FIRA Screenshot 1.png" alt="Project FIRA"
-                   onerror="this.src='https://placehold.co/600x400/1A2530/2DD4BF?text=Project+FIRA&font=montserrat'" />
-              <div class="project-card-overlay"></div>
-              <span class="project-tag">Web &amp; Mobile</span>
+        <button class="rail-btn rail-btn--prev" id="projPrev" aria-label="Previous project">
+          <i class="bi bi-chevron-left"></i>
+        </button>
+        <button class="rail-btn rail-btn--next" id="projNext" aria-label="Next project">
+          <i class="bi bi-chevron-right"></i>
+        </button>
+
+        <div class="project-carousel-stage" id="projStage">
+
+          <!-- Project FIRA -->
+          <div class="project-carousel-item">
+            <div class="project-card">
+              <div class="project-card-img-wrap">
+                <img src="images/FIRA Screenshot 1.png" alt="Project FIRA"
+                     onerror="this.src='https://placehold.co/600x400/1A2530/2DD4BF?text=Project+FIRA&font=montserrat'" />
+                <div class="project-card-overlay"></div>
+                <span class="project-tag">Web &amp; Mobile</span>
+              </div>
+              <div class="project-card-body">
+                <h3 class="project-title">Project FIRA</h3>
+                <p class="project-teaser">
+                  A fire incident reporting web &amp; mobile application powered by a CNN-based
+                  image validation model with real-time Google Maps visualization.
+                </p>
+                <a href="project-fira.html" class="btn-verpto-outline" style="padding:10px 26px;font-size:0.82rem;align-self:flex-start;">
+                  View Project &nbsp;<i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
             </div>
-            <div class="project-card-body">
-              <h3 class="project-title">Project FIRA</h3>
-              <p class="project-teaser">
-                A fire incident reporting web &amp; mobile application powered by a CNN-based
-                image validation model with real-time Google Maps visualization.
-              </p>
-              <a href="project-fira.html" class="btn-verpto-outline" style="padding:10px 26px;font-size:0.82rem;align-self:flex-start;">
-                View Project &nbsp;<i class="bi bi-arrow-right"></i>
-              </a>
+          </div>
+
+          <!-- Hotel Asia -->
+          <div class="project-carousel-item">
+            <div class="project-card">
+              <div class="project-card-img-wrap">
+                <img src="images/Hotel Asia Screenshot 1.png" alt="Hotel Asia"
+                     onerror="this.src='https://placehold.co/600x400/1A2530/2DD4BF?text=Hotel+Asia&font=montserrat'" />
+                <div class="project-card-overlay"></div>
+                <span class="project-tag">Hospitality</span>
+              </div>
+              <div class="project-card-body">
+                <h3 class="project-title">Hotel Asia</h3>
+                <p class="project-teaser">
+                  A modern, mobile-responsive hotel website that showcases rooms, facilities,
+                  dining, and location while streamlining guest inquiries and bookings.
+                </p>
+                <a href="project-hotel-asia.html" class="btn-verpto-outline" style="padding:10px 26px;font-size:0.82rem;align-self:flex-start;">
+                  View Project &nbsp;<i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
             </div>
+          </div>
+
+          <!-- EXPoints -->
+          <div class="project-carousel-item">
+            <div class="project-card">
+              <div class="project-card-img-wrap">
+                <img src="images/EXPoints Screenshot 1.png" alt="EXPoints"
+                     onerror="this.src='https://placehold.co/600x400/1A2530/2DD4BF?text=EXPoints&font=montserrat'" />
+                <div class="project-card-overlay"></div>
+                <span class="project-tag">PHP Platform</span>
+              </div>
+              <div class="project-card-body">
+                <h3 class="project-title">EXPoints</h3>
+                <p class="project-teaser">
+                  A gamified PHP web platform centralizing video game reviews with XP points,
+                  community tools, role-based admin controls, and secure content moderation.
+                </p>
+                <a href="project-expoints.html" class="btn-verpto-outline" style="padding:10px 26px;font-size:0.82rem;align-self:flex-start;">
+                  View Project &nbsp;<i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Up-next slot (swap this ghost for the real card when it ships) -->
+          <div class="project-carousel-item">
+            <div class="project-card project-card--ghost">
+              <div class="project-card-img-wrap project-ghost-media">
+                <i class="bi bi-code-slash"></i>
+                <span>In the works</span>
+              </div>
+              <div class="project-card-body">
+                <h3 class="project-title project-title--ghost">Next Project</h3>
+                <p class="project-teaser">
+                  Something new is already on the workbench — the next build
+                  will dock here soon.
+                </p>
+                <span class="ghost-pill">Coming Soon</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Up-next slot -->
+          <div class="project-carousel-item">
+            <div class="project-card project-card--ghost">
+              <div class="project-card-img-wrap project-ghost-media">
+                <i class="bi bi-lightbulb"></i>
+                <span>Reserved slot</span>
+              </div>
+              <div class="project-card-body">
+                <h3 class="project-title project-title--ghost">Your Project?</h3>
+                <p class="project-teaser">
+                  This spot is open. If you can imagine it, we can build it —
+                  and feature it right here.
+                </p>
+                <a href="#contact" class="btn-verpto-outline" style="padding:10px 26px;font-size:0.82rem;align-self:flex-start;">
+                  Start a Project &nbsp;<i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /project-carousel-stage -->
+       </div><!-- /project-carousel-frame -->
+      </div><!-- /project-carousel-wrap -->
+    </div>
+  </section>
+
+  <!-- Wave Divider: Projects (white) → Process (light) -->
+  <div class="wave-divider" style="background:var(--white);">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none"
+         xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;">
+      <path d="M0,40 C360,0 1080,80 1440,20 L1440,60 L0,60 Z"
+            style="fill:var(--light-bg);"/>
+    </svg>
+  </div>
+
+  <!-- ══════════════════════════════════════════════
+       PROCESS SECTION — How We Work
+  ══════════════════════════════════════════════ -->
+  <section class="process-section section-pad" id="process">
+    <div class="container">
+
+      <div class="text-center mb-5 fade-up">
+        <span class="section-label">Our Process</span>
+        <h2 class="section-title">How We Work</h2>
+        <p class="section-sub">
+          A clear, collaborative four-step journey from first hello to launch day.
+        </p>
+      </div>
+
+      <div class="row g-4 gy-5">
+
+        <div class="col-md-6 col-lg-3 fade-up">
+          <div class="process-step process-connect">
+            <span class="process-num">01</span>
+            <div class="process-icon"><i class="bi bi-chat-dots-fill"></i></div>
+            <h3 class="process-title">Discover</h3>
+            <p class="process-desc">
+              We sit down with you to understand your business, your customers,
+              and what success looks like.
+            </p>
           </div>
         </div>
 
-        <!-- Hotel Asia -->
-        <div class="col-md-6 col-lg-4 fade-up">
-          <div class="project-card">
-            <div class="project-card-img-wrap">
-              <img src="images/Hotel Asia Screenshot 1.png" alt="Hotel Asia"
-                   onerror="this.src='https://placehold.co/600x400/1A2530/2DD4BF?text=Hotel+Asia&font=montserrat'" />
-              <div class="project-card-overlay"></div>
-              <span class="project-tag">Hospitality</span>
-            </div>
-            <div class="project-card-body">
-              <h3 class="project-title">Hotel Asia</h3>
-              <p class="project-teaser">
-                A modern, mobile-responsive hotel website that showcases rooms, facilities,
-                dining, and location while streamlining guest inquiries and bookings.
-              </p>
-              <a href="project-hotel-asia.html" class="btn-verpto-outline" style="padding:10px 26px;font-size:0.82rem;align-self:flex-start;">
-                View Project &nbsp;<i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
+        <div class="col-md-6 col-lg-3 fade-up">
+          <div class="process-step process-connect">
+            <span class="process-num">02</span>
+            <div class="process-icon"><i class="bi bi-vector-pen"></i></div>
+            <h3 class="process-title">Design</h3>
+            <p class="process-desc">
+              Wireframes and high-fidelity mockups take shape — you approve every
+              screen before a single line of code.
+            </p>
           </div>
         </div>
 
-        <!-- EXPoints -->
-        <div class="col-md-6 col-lg-4 fade-up">
-          <div class="project-card">
-            <div class="project-card-img-wrap">
-              <img src="images/EXPoints Screenshot 1.png" alt="EXPoints"
-                   onerror="this.src='https://placehold.co/600x400/1A2530/2DD4BF?text=EXPoints&font=montserrat'" />
-              <div class="project-card-overlay"></div>
-              <span class="project-tag">PHP Platform</span>
-            </div>
-            <div class="project-card-body">
-              <h3 class="project-title">EXPoints</h3>
-              <p class="project-teaser">
-                A gamified PHP web platform centralizing video game reviews with XP points,
-                community tools, role-based admin controls, and secure content moderation.
-              </p>
-              <a href="project-expoints.html" class="btn-verpto-outline" style="padding:10px 26px;font-size:0.82rem;align-self:flex-start;">
-                View Project &nbsp;<i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
+        <div class="col-md-6 col-lg-3 fade-up">
+          <div class="process-step process-connect">
+            <span class="process-num">03</span>
+            <div class="process-icon"><i class="bi bi-code-slash"></i></div>
+            <h3 class="process-title">Develop</h3>
+            <p class="process-desc">
+              Your site is built with clean, modern code — tested on every device
+              and browser along the way.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 fade-up">
+          <div class="process-step">
+            <span class="process-num">04</span>
+            <div class="process-icon"><i class="bi bi-rocket-takeoff-fill"></i></div>
+            <h3 class="process-title">Launch</h3>
+            <p class="process-desc">
+              We deploy, connect your domain, and hand over the keys — then stay
+              close for support and growth.
+            </p>
           </div>
         </div>
 
       </div>
     </div>
   </section>
+
+  <!-- Wave Divider: Process (light) → Achievements (dark) -->
+  <div class="wave-divider wave-divider--flip" style="background:var(--light-bg);">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none"
+         xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;">
+      <path d="M0,40 C360,0 1080,80 1440,20 L1440,60 L0,60 Z"
+            style="fill:#16202b;"/>
+    </svg>
+  </div>
 
   <!-- ══════════════════════════════════════════════
        ACHIEVEMENTS SECTION — Trophy Vault
@@ -589,110 +851,43 @@
         </p>
       </div>
 
-      <div class="row g-4 align-items-start">
+      <!-- Trophy Vault: featured LAMBO stays a big double-width column; the
+           supporting cards stack in two narrower columns so short tiles pack
+           tight beneath the taller champion tiles (no dead gap), while the
+           size hierarchy is preserved (see .ach-vault in style.css). -->
+      <div class="ach-vault">
 
-        <!-- Featured achievement -->
-        <div class="col-lg-6 fade-up">
-          <article class="ach-card ach-card--featured" data-tilt data-tilt-max="4">
-            <span class="ach-badge">Coming Soon</span>
-            <div class="ach-media">
-              <i class="bi bi-image"></i>
-              <span>High-res photo incoming</span>
+        <!-- Featured column: LAMBO (big) + the CTA beneath it -->
+        <div class="ach-vault-main">
+
+          <!-- Featured achievement — LAMBO 2026 Champions -->
+          <article class="ach-card ach-card--featured ach-card--link fade-up" data-tilt data-tilt-max="4">
+            <span class="ach-badge ach-badge--gold"><i class="bi bi-trophy-fill"></i> Champions</span>
+            <div class="ach-media ach-media--filled">
+              <img src="images/lambo-champs2.jpg"
+                   alt="Team VERPTO as Visayas Visionaries — 1st Place at the LAMBO 2026 Business Case Competition"
+                   class="ach-photo" />
             </div>
             <div class="ach-head">
-              <div class="ach-medal"><i class="bi bi-trophy-fill"></i></div>
+              <div class="ach-medal ach-medal--gold"><i class="bi bi-trophy-fill"></i></div>
               <div>
-                <h3 class="ach-title">Featured Milestone</h3>
-                <span class="ach-date">Date · TBA</span>
+                <h3 class="ach-title">LAMBO 2026 · Business Case Champions</h3>
+                <span class="ach-date">June 27, 2026 · Waterfront Cebu</span>
               </div>
             </div>
             <p class="ach-desc">
-              Our proudest moment will live here — the story, the photos, and what
-              it took to get there. Watch this space.
+              Competing as the <strong>Visayas Visionaries</strong>, Jashmine Verdida and
+              Eijay Pepito took <strong>1st Place</strong> out of 18 teams at Cebu's AI
+              Business Summit — presented by JCI Cebu, EXL &amp; the Asian Institute of
+              Management.
             </p>
+            <span class="ach-cta">Read the full story <i class="bi bi-arrow-right"></i></span>
+            <a href="achievement-lambo.html" class="stretched-link"
+               aria-label="LAMBO 2026 Champions — full story"></a>
           </article>
-        </div>
 
-        <!-- Supporting tiles -->
-        <div class="col-md-6 col-lg-3 fade-up">
-          <article class="ach-card" data-tilt data-tilt-max="4">
-            <div class="ach-media">
-              <i class="bi bi-image"></i>
-              <span>Photo incoming</span>
-            </div>
-            <div class="ach-head">
-              <div class="ach-medal"><i class="bi bi-award-fill"></i></div>
-              <div>
-                <h3 class="ach-title">Recognition</h3>
-                <span class="ach-date">Date · TBA</span>
-              </div>
-            </div>
-            <div class="ach-line"></div>
-            <div class="ach-line ach-line--70"></div>
-            <div class="ach-line ach-line--45"></div>
-          </article>
-        </div>
-
-        <div class="col-md-6 col-lg-3 fade-up">
-          <article class="ach-card ach-stagger" data-tilt data-tilt-max="4">
-            <div class="ach-media">
-              <i class="bi bi-image"></i>
-              <span>Photo incoming</span>
-            </div>
-            <div class="ach-head">
-              <div class="ach-medal"><i class="bi bi-rocket-takeoff-fill"></i></div>
-              <div>
-                <h3 class="ach-title">Launch</h3>
-                <span class="ach-date">Date · TBA</span>
-              </div>
-            </div>
-            <div class="ach-line"></div>
-            <div class="ach-line ach-line--70"></div>
-            <div class="ach-line ach-line--45"></div>
-          </article>
-        </div>
-
-        <div class="col-md-6 col-lg-3 fade-up">
-          <article class="ach-card" data-tilt data-tilt-max="4">
-            <div class="ach-media">
-              <i class="bi bi-image"></i>
-              <span>Photo incoming</span>
-            </div>
-            <div class="ach-head">
-              <div class="ach-medal"><i class="bi bi-star-fill"></i></div>
-              <div>
-                <h3 class="ach-title">Certification</h3>
-                <span class="ach-date">Date · TBA</span>
-              </div>
-            </div>
-            <div class="ach-line"></div>
-            <div class="ach-line ach-line--70"></div>
-            <div class="ach-line ach-line--45"></div>
-          </article>
-        </div>
-
-        <div class="col-md-6 col-lg-3 fade-up">
-          <article class="ach-card ach-stagger" data-tilt data-tilt-max="4">
-            <div class="ach-media">
-              <i class="bi bi-image"></i>
-              <span>Photo incoming</span>
-            </div>
-            <div class="ach-head">
-              <div class="ach-medal"><i class="bi bi-people-fill"></i></div>
-              <div>
-                <h3 class="ach-title">Community</h3>
-                <span class="ach-date">Date · TBA</span>
-              </div>
-            </div>
-            <div class="ach-line"></div>
-            <div class="ach-line ach-line--70"></div>
-            <div class="ach-line ach-line--45"></div>
-          </article>
-        </div>
-
-        <!-- CTA tile balances the grid's second row -->
-        <div class="col-lg-6 fade-up">
-          <article class="ach-card d-flex flex-column justify-content-center text-center" data-tilt data-tilt-max="4">
+          <!-- CTA tile -->
+          <article class="ach-card ach-card--cta d-flex flex-column justify-content-center text-center fade-up" data-tilt data-tilt-max="4">
             <div class="ach-head justify-content-center">
               <div class="ach-medal"><i class="bi bi-lightning-charge-fill"></i></div>
               <div class="text-start">
@@ -710,9 +905,104 @@
               </a>
             </div>
           </article>
-        </div>
 
-      </div>
+        </div><!-- /ach-vault-main -->
+
+        <!-- Stack 1: PSITE champion tile + a placeholder beneath -->
+        <div class="ach-vault-stack">
+
+          <!-- PSITE Innovation Challenge 2026 — Champions -->
+          <article class="ach-card ach-card--link fade-up" data-tilt data-tilt-max="4">
+            <span class="ach-badge ach-badge--gold"><i class="bi bi-trophy-fill"></i> Champion</span>
+            <div class="ach-media ach-media--filled">
+              <img src="images/psite-card.jpg"
+                   alt="UCB-VERPTO — Champions of the PSITE Innovation Challenge 2026"
+                   class="ach-photo" />
+            </div>
+            <div class="ach-head">
+              <div class="ach-medal ach-medal--gold"><i class="bi bi-award-fill"></i></div>
+              <div>
+                <h3 class="ach-title">PSITE Innovation Challenge 2026</h3>
+                <span class="ach-date">April 30, 2026 · UC Coliseum</span>
+              </div>
+            </div>
+            <p class="ach-desc">
+              Champions as <strong>UCB-VERPTO</strong> — pitching RUFUS, our AI solution
+              for RAFI Microfinance, live at the Cebu ICT Student Congress.
+            </p>
+            <span class="ach-cta">Full story <i class="bi bi-arrow-right"></i></span>
+            <a href="achievement-psite.html" class="stretched-link"
+               aria-label="PSITE Innovation Challenge 2026 Champions — full story"></a>
+          </article>
+
+          <!-- Placeholder tile — swap .ach-media for an <img class="ach-photo"> once shot -->
+          <article class="ach-card fade-up" data-tilt data-tilt-max="4">
+            <div class="ach-media">
+              <i class="bi bi-image"></i>
+              <span>Photo incoming</span>
+            </div>
+            <div class="ach-head">
+              <div class="ach-medal"><i class="bi bi-star-fill"></i></div>
+              <div>
+                <h3 class="ach-title">Certification</h3>
+                <span class="ach-date">Date · TBA</span>
+              </div>
+            </div>
+            <div class="ach-line"></div>
+            <div class="ach-line ach-line--70"></div>
+            <div class="ach-line ach-line--45"></div>
+          </article>
+
+        </div><!-- /ach-vault-stack -->
+
+        <!-- Stack 2: ICT champion tile + a placeholder beneath -->
+        <div class="ach-vault-stack">
+
+          <!-- UC ICT Congress 2026 — Lightning Pitch Champions -->
+          <article class="ach-card ach-card--link fade-up" data-tilt data-tilt-max="4">
+            <span class="ach-badge ach-badge--gold"><i class="bi bi-trophy-fill"></i> Champion</span>
+            <div class="ach-media ach-media--filled">
+              <img src="images/ICT-Con1.jpg" style="object-position:center 32%;"
+                   alt="Team FIRA — Champions of the UC ICT Congress 2026 Lightning Pitch Competition"
+                   class="ach-photo" />
+            </div>
+            <div class="ach-head">
+              <div class="ach-medal ach-medal--gold"><i class="bi bi-lightning-charge-fill"></i></div>
+              <div>
+                <h3 class="ach-title">UC ICT Congress 2026</h3>
+                <span class="ach-date">April 22, 2026 · New Cebu Coliseum</span>
+              </div>
+            </div>
+            <p class="ach-desc">
+              Team FIRA won the <strong>Lightning Pitch Competition</strong> for UC-Banilad —
+              Eijay pitching, Jashmine on slides &amp; tech.
+            </p>
+            <span class="ach-cta">Full story <i class="bi bi-arrow-right"></i></span>
+            <a href="achievement-ictcongress.html" class="stretched-link"
+               aria-label="UC ICT Congress 2026 Lightning Pitch Champions — full story"></a>
+          </article>
+
+          <!-- Placeholder tile -->
+          <article class="ach-card fade-up" data-tilt data-tilt-max="4">
+            <div class="ach-media">
+              <i class="bi bi-image"></i>
+              <span>Photo incoming</span>
+            </div>
+            <div class="ach-head">
+              <div class="ach-medal"><i class="bi bi-people-fill"></i></div>
+              <div>
+                <h3 class="ach-title">Community</h3>
+                <span class="ach-date">Date · TBA</span>
+              </div>
+            </div>
+            <div class="ach-line"></div>
+            <div class="ach-line ach-line--70"></div>
+            <div class="ach-line ach-line--45"></div>
+          </article>
+
+        </div><!-- /ach-vault-stack -->
+
+      </div><!-- /ach-vault -->
 
       <div class="text-center mt-5 fade-up">
         <span class="ach-more">&gt; loading more milestones…</span>
@@ -720,6 +1010,15 @@
 
     </div>
   </section>
+
+  <!-- Wave Divider: Achievements (dark) → Contact (light) -->
+  <div class="wave-divider" style="background:#101820;">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none"
+         xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;">
+      <path d="M0,40 C360,0 1080,80 1440,20 L1440,60 L0,60 Z"
+            style="fill:var(--light-bg);"/>
+    </svg>
+  </div>
 
   <!-- ══════════════════════════════════════════════
        CONTACT SECTION
@@ -857,8 +1156,10 @@
           <ul class="footer-link-list">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#process">Process</a></li>
             <li><a href="#achievements">Achievements</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
@@ -953,98 +1254,55 @@
     });
   </script>
 
-  <!-- Custom JS: scroll animations, nav highlighting, 3D tilt engine -->
+  <!-- Shared site behaviors: fade-ups, scroll handling, 3D tilt engine, counters -->
+  <script src="js/site.js"></script>
+
+  <!-- Rotating hero headline: crossfades through what VERPTO can build -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      const article = document.getElementById('heroArticle');
+      const word    = document.getElementById('heroWord');
+      const sub     = document.getElementById('heroSub');
+      if (!article || !word || !sub) return;
 
-      // ── Intersection Observer for .fade-up animations ──
-      const fadeEls = document.querySelectorAll('.fade-up');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, i) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => entry.target.classList.add('visible'), i * 80);
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12 });
-      fadeEls.forEach(el => observer.observe(el));
+      const SLIDES = [
+        { article: 'a',  word: 'Website?',
+          sub: "Let's get your business Online. We craft modern, high-performance web experiences that drive real results." },
+        { article: 'an', word: 'App?',
+          sub: "From idea to launch, we design and build sleek web & mobile apps your customers will love to use." },
+        { article: 'a',  word: 'Solution?',
+          sub: "We turn everyday problems into smart digital solutions — tailored, scalable, and built around your business." },
+        { article: 'a',  word: 'Project?',
+          sub: "Big or small, your project deserves expert hands. We plan, design, and deliver — on time and beyond expectations." },
+      ];
 
-      // Stagger children within same parent
-      document.querySelectorAll('.row .fade-up').forEach((el, i) => {
-        el.style.transitionDelay = `${(i % 3) * 0.10}s`;
-      });
+      const els      = [article, word, sub];
+      const noMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const HOLD     = 8000;   // full cycle per message — plenty of reading time
+      const FADE     = 900;    // matches .hero-fade transition duration
+      let i = 0;
 
-      // ── Single passive scroll handler: nav highlight, navbar shadow,
-      //    business-card float visibility ──
-      const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('.navbar-verpto .nav-link');
-      const navbar   = document.querySelector('.navbar-verpto');
-      const bcFloat  = document.getElementById('bcFloat');
-      let scrollRaf = null;
-
-      const onScroll = () => {
-        scrollRaf = null;
-        const y = window.scrollY;
-
-        let current = '';
-        sections.forEach(sec => {
-          if (y >= sec.offsetTop - 80) current = sec.id;
-        });
-        navLinks.forEach(link => {
-          link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
-        });
-
-        navbar.style.boxShadow = y > 20
-          ? '0 4px 30px rgba(26,37,48,0.12)'
-          : '0 2px 20px rgba(26,37,48,0.06)';
-
-        if (bcFloat) bcFloat.classList.toggle('bc-float--visible', y > 300);
+      const apply = (s) => {
+        article.textContent = s.article;
+        word.textContent    = s.word;
+        sub.textContent     = s.sub;
       };
 
-      window.addEventListener('scroll', () => {
-        if (!scrollRaf) scrollRaf = requestAnimationFrame(onScroll);
-      }, { passive: true });
-      onScroll();
+      setInterval(() => {
+        if (document.hidden) return;   // don't churn in background tabs
+        i = (i + 1) % SLIDES.length;
 
-      // ── 3D Tilt Engine ──
-      // Drives --rx/--ry (rotation) and --mx/--my (cursor spotlight) on
-      // [data-tilt] elements. Skipped entirely on touch devices and for
-      // users who prefer reduced motion.
-      const fine     = window.matchMedia('(hover: hover) and (pointer: fine)');
-      const noMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-      if (fine.matches && !noMotion.matches) {
-        document.querySelectorAll('[data-tilt]').forEach(panel => {
-          const max = parseFloat(panel.dataset.tiltMax) || 7;
-          let raf = null, px = 0.5, py = 0.5;
+        if (noMotion.matches) {        // no fade for reduced-motion users
+          apply(SLIDES[i]);
+          return;
+        }
 
-          const render = () => {
-            raf = null;
-            panel.style.setProperty('--rx', ((0.5 - py) * max * 2).toFixed(2) + 'deg');
-            panel.style.setProperty('--ry', ((px - 0.5) * max * 2).toFixed(2) + 'deg');
-            panel.style.setProperty('--mx', (px * 100).toFixed(1) + '%');
-            panel.style.setProperty('--my', (py * 100).toFixed(1) + '%');
-          };
-
-          panel.addEventListener('pointerenter', () => {
-            panel.classList.remove('tilt-settle');
-          });
-
-          panel.addEventListener('pointermove', (e) => {
-            const r = panel.getBoundingClientRect();
-            px = (e.clientX - r.left) / r.width;
-            py = (e.clientY - r.top) / r.height;
-            if (!raf) raf = requestAnimationFrame(render);
-          });
-
-          panel.addEventListener('pointerleave', () => {
-            if (raf) { cancelAnimationFrame(raf); raf = null; }
-            panel.classList.add('tilt-settle');
-            panel.style.setProperty('--rx', '0deg');
-            panel.style.setProperty('--ry', '0deg');
-          });
-        });
-      }
-
+        els.forEach(el => el.classList.add('hero-fade--out'));
+        setTimeout(() => {
+          apply(SLIDES[i]);
+          els.forEach(el => el.classList.remove('hero-fade--out'));
+        }, FADE);
+      }, HOLD);
     });
   </script>
 
@@ -1085,6 +1343,11 @@
       });
     });
   </script>
+
+  <!-- ── Back to Top ── -->
+  <a href="#home" class="back-top" id="backTop" aria-label="Back to top">
+    <i class="bi bi-chevron-up"></i>
+  </a>
 
   <!-- ── Floating Business Card Widget ── -->
   <div class="bc-float" id="bcFloat" title="Our Business Card">

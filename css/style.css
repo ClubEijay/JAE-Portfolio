@@ -26,6 +26,9 @@
 
 html { scroll-behavior: smooth; }
 
+/* Anchored sections stop below the sticky navbar instead of under it */
+section[id] { scroll-margin-top: 88px; }
+
 body {
   font-family: 'Inter', 'Montserrat', sans-serif;
   background-color: var(--white);
@@ -156,7 +159,7 @@ img { max-width: 100%; }
 /* ── Navbar ── */
 .navbar-verpto {
   background-color: var(--white);
-  padding: 16px 0;
+  padding: 10px 0;
   border-bottom: 1px solid var(--border-color);
   position: sticky;
   top: 0;
@@ -165,15 +168,34 @@ img { max-width: 100%; }
   transition: var(--transition);
 }
 
+/* Brand — the anchor is the tilt surface ([data-tilt] sets --rx/--ry on it);
+   the logo inherits those vars so it rotates in the anchor's perspective. */
 .navbar-verpto .navbar-brand {
   display: flex;
   align-items: center;
   gap: 10px;
+  perspective: 520px;
+}
+
+.navbar-verpto .navbar-brand:hover {
+  transform: scale(1.08);
 }
 
 .navbar-verpto .brand-logo {
-  height: 40px;
+  height: 56px;
   width: auto;
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  will-change: transform;
+  transition: filter 0.35s ease;
+}
+
+.navbar-verpto .navbar-brand:hover .brand-logo {
+  filter: drop-shadow(0 10px 22px rgba(45, 212, 191, 0.55));
+}
+
+/* Springy settle for the logo when the pointer leaves (matches holo panels) */
+.navbar-brand.tilt-settle .brand-logo {
+  transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.35s ease;
 }
 
 .brand-wordmark {
@@ -224,6 +246,18 @@ img { max-width: 100%; }
 .navbar-toggler {
   border: 1.5px solid var(--primary) !important;
   border-radius: 6px;
+}
+
+/* Squeeze links slightly at lg so the 7-item menu fits on one row */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .navbar-verpto .nav-link {
+    padding: 8px 10px !important;
+    font-size: 0.82rem;
+  }
+  .navbar-verpto .nav-link::after {
+    left: 10px;
+    right: 10px;
+  }
 }
 
 /* ── Buttons ── */
@@ -354,6 +388,21 @@ img { max-width: 100%; }
   font-weight: 400;
   margin-bottom: 40px;
   max-width: 520px;
+  /* Reserve ~3 lines so the CTAs below don't jump as rotating copy changes */
+  min-height: 5.1em;
+}
+
+/* Rotating hero copy — the article, highlight word, and subheadline
+   crossfade together while "Need" stays put (driven by inline JS). */
+.hero-fade {
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+span.hero-fade { display: inline-block; }
+
+.hero-fade--out {
+  opacity: 0;
+  transform: translateY(12px);
 }
 
 /* Animated geometric shapes in hero */
@@ -412,6 +461,47 @@ img { max-width: 100%; }
 .wave-divider svg {
   display: block;
   width: 100%;
+}
+
+/* Mirrored variant so consecutive waves don't repeat the same curve */
+.wave-divider--flip svg {
+  transform: scaleX(-1);
+}
+
+/* ── Hero Scroll Indicator ── */
+.hero-scroll {
+  position: absolute;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  width: 26px;
+  height: 42px;
+  border: 2px solid rgba(45, 212, 191, 0.45);
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.hero-scroll:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 18px rgba(45, 212, 191, 0.35);
+}
+
+.hero-scroll span {
+  width: 4px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--accent);
+  margin-top: 7px;
+  animation: scrollDot 1.9s ease-in-out infinite;
+}
+
+@keyframes scrollDot {
+  0%   { transform: translateY(0);    opacity: 1; }
+  65%  { transform: translateY(15px); opacity: 0; }
+  100% { transform: translateY(0);    opacity: 0; }
 }
 
 /* ── About Section ── */
@@ -495,6 +585,161 @@ img { max-width: 100%; }
 }
 
 .team-contact-list a:hover { color: var(--primary); }
+
+/* ── Services Section ── */
+.services-section {
+  background-color: var(--light-bg);
+  position: relative;
+}
+
+.service-card {
+  position: relative;
+  height: 100%;
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+  padding: 34px 30px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+/* Accent line sweeps in along the top on hover */
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(45, 212, 191, 0.45);
+  box-shadow: 0 16px 48px rgba(26, 37, 48, 0.16);
+}
+
+.service-card:hover::before { transform: scaleX(1); }
+
+.service-icon {
+  width: 56px;
+  height: 56px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: linear-gradient(150deg, var(--accent), var(--accent-dim));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: var(--transition);
+}
+
+.service-icon i {
+  color: var(--primary);
+  font-size: 1.3rem;
+}
+
+.service-card:hover .service-icon {
+  transform: rotate(10deg) scale(1.1);
+}
+
+.service-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.service-desc {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Process Section ── */
+.process-section {
+  background-color: var(--light-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.process-step {
+  position: relative;
+  text-align: center;
+  padding: 0 12px;
+  height: 100%;
+}
+
+.process-num {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.2rem;
+  font-weight: 900;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(45, 212, 191, 0.5);
+  margin-bottom: -14px;
+  user-select: none;
+}
+
+.process-icon {
+  position: relative;
+  z-index: 1;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 18px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.process-icon i {
+  color: var(--accent);
+  font-size: 1.4rem;
+  transition: var(--transition);
+}
+
+.process-step:hover .process-icon {
+  background: var(--accent);
+  transform: scale(1.1);
+}
+
+.process-step:hover .process-icon i { color: var(--primary); }
+
+.process-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.process-desc {
+  font-size: 0.87rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Dashed connector between steps on large screens
+   (add .process-connect to every step except the last) */
+@media (min-width: 992px) {
+  .process-connect::after {
+    content: '';
+    position: absolute;
+    top: 69px;
+    left: calc(50% + 46px);
+    right: calc(-50% + 46px);
+    border-top: 2px dashed rgba(45, 212, 191, 0.4);
+  }
+}
 
 /* ── Skills Section ── */
 .skills-section {
@@ -711,6 +956,43 @@ img { max-width: 100%; }
 
 .section-title--light { color: var(--white); }
 .section-sub--light   { color: rgba(255, 255, 255, 0.55); }
+
+/* ── Trophy Vault layout ──
+   The featured card stays a big double-width column on the left; the smaller
+   cards live in two narrower columns that STACK vertically and pack tight
+   (PSITE→Certification, ICT→Community) — so short cards don't leave a dead
+   band beneath them, while the size hierarchy (big featured, smaller tiles)
+   is preserved. Columns are independent, so nothing is stretched to align. */
+.ach-vault {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.ach-vault-main,
+.ach-vault-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
+.ach-vault-main  { flex: 2 1 0; }   /* featured column — double width */
+.ach-vault-stack { flex: 1 1 0; }   /* supporting columns — single width */
+
+/* Tablet: featured on top (full width), the two stacks side by side below */
+@media (max-width: 991.98px) {
+  .ach-vault { flex-wrap: wrap; }
+  .ach-vault-main { flex: 1 1 100%; }
+  .ach-vault-stack { flex: 1 1 calc(50% - 12px); }
+}
+
+/* Phone: everything in one column */
+@media (max-width: 575.98px) {
+  .ach-vault { flex-direction: column; }
+  .ach-vault-main,
+  .ach-vault-stack { flex: 1 1 auto; width: 100%; }
+}
 
 .ach-card {
   position: relative;
@@ -1095,6 +1377,226 @@ img { max-width: 100%; }
   flex: 1;
 }
 
+/* ── Project carousel: character-select style, native-scroll powered ──
+   Real horizontal scroll-snap drives the motion — cards live in true flow
+   layout, side by side, so they can never visually cross or overlap during
+   a transition (that "passing through" glitch is structurally impossible
+   here). JS continuously reads each card's distance from the stage's
+   center as the user scrolls and dials its scale/opacity/saturation up or
+   down in real time, so the "3 bright, sides dimmed" look holds no matter
+   how you get there — arrow click, drag, trackpad, or touch swipe, all
+   perfectly in sync since they're all just... scrolling. The loop is an
+   illusion: JS clones the whole item set before and after the real one,
+   and silently re-centers scrollLeft by one full set-width whenever you
+   scroll deep enough into a clone — since clones are pixel-identical to
+   the real cards, the jump is invisible. */
+.project-carousel-wrap {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 0 clamp(20px, 5vw, 90px);
+  box-sizing: border-box;
+}
+
+/* Matches the stage's own box exactly (same max-width/centering) and never
+   scrolls — this is what the arrows anchor to, so they sit right at the
+   edge of the visible cards instead of drifting out toward the raw
+   viewport edge on wide screens. */
+.project-carousel-frame {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.project-carousel-stage {
+  position: relative;
+  width: 100%;
+  height: var(--pc-h, 500px);
+  display: flex;
+  align-items: center;
+  gap: var(--pc-gap);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  --pc-w: 340px;
+  --pc-gap: 24px;
+}
+
+.project-carousel-stage::-webkit-scrollbar { display: none; }
+
+.project-carousel-item {
+  flex: 0 0 var(--pc-w);
+  scroll-snap-align: center;
+  cursor: pointer;
+  /* transform/opacity/filter are set inline by JS every scroll frame —
+     this transition only smooths the arrival at rest, not the scroll
+     itself (that's native, and already buttery). */
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out, filter 0.2s ease-out;
+}
+
+.project-carousel-item .project-card { height: var(--pc-h, 500px); }
+
+@media (max-width: 991.98px) {
+  .project-carousel-stage { --pc-w: 280px; --pc-gap: 20px; --pc-h: 470px; }
+}
+
+@media (max-width: 575.98px) {
+  .project-carousel-stage { --pc-w: min(80vw, 340px); --pc-gap: 14px; --pc-h: 440px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-carousel-item { transition: none; }
+}
+
+/* ── Arrow controls ──
+   Circular, accent-filled on hover, with an idle "breathing" ring that
+   invites a click, an icon nudge on hover, and a satisfying expanding-ring
+   pulse the instant you click — reward, not just navigation. */
+.rail-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: none;
+  background: var(--white);
+  color: var(--primary);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 32px rgba(26, 37, 48, 0.18), 0 0 0 1.5px var(--border-color) inset;
+  cursor: pointer;
+  overflow: visible;
+  transition: background 0.3s ease, box-shadow 0.3s ease,
+              transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Idle invite ring — a soft pulse that hints "there's more, come look" */
+.rail-btn::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(45, 212, 191, 0.4);
+  opacity: 0;
+  animation: railInvite 3.2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes railInvite {
+  0%, 100% { transform: scale(1);    opacity: 0; }
+  50%      { transform: scale(1.16); opacity: 1; }
+}
+
+.rail-btn i {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.rail-btn:hover {
+  background: linear-gradient(135deg, var(--accent), var(--accent-dim));
+  color: var(--primary);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 18px 44px rgba(45, 212, 191, 0.4);
+}
+
+.rail-btn--prev:hover i { transform: translateX(-3px); }
+.rail-btn--next:hover i { transform: translateX(3px); }
+
+.rail-btn:active { transform: translateY(-50%) scale(0.94); }
+
+/* Click ripple — a ring that bursts outward and fades on every click */
+.rail-btn--pulse::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.55;
+  animation: railPulse 0.5s ease-out;
+  pointer-events: none;
+}
+
+@keyframes railPulse {
+  0%   { transform: scale(0.6); opacity: 0.55; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+
+.rail-btn--prev { left: -26px; }
+.rail-btn--next { right: -26px; }
+
+@media (max-width: 768px) {
+  .rail-btn { width: 46px; height: 46px; }
+  .rail-btn--prev { left: 8px; }
+  .rail-btn--next { right: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rail-btn::before { animation: none; opacity: 0; }
+  .rail-btn--pulse::after { animation: none; }
+}
+
+/* Ghost slots for upcoming projects */
+.project-card--ghost {
+  border-style: dashed;
+  border-color: rgba(45, 212, 191, 0.45);
+  background: linear-gradient(160deg, rgba(45, 212, 191, 0.045), rgba(26, 37, 48, 0.02));
+  box-shadow: none;
+}
+
+.project-card--ghost:hover {
+  box-shadow: 0 16px 40px rgba(45, 212, 191, 0.12);
+}
+
+.project-ghost-media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-bottom: 1.5px dashed rgba(45, 212, 191, 0.35);
+  background:
+    radial-gradient(circle at 30% 20%, rgba(45, 212, 191, 0.08), transparent 60%),
+    rgba(26, 37, 48, 0.03);
+}
+
+.project-ghost-media i {
+  font-size: 1.8rem;
+  color: rgba(26, 168, 152, 0.65);
+}
+
+.project-ghost-media span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.project-title--ghost { color: rgba(26, 37, 48, 0.75); }
+
+.ghost-pill {
+  align-self: flex-start;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-dim);
+  background: rgba(45, 212, 191, 0.1);
+  border: 1px solid rgba(45, 212, 191, 0.35);
+  padding: 8px 16px;
+  border-radius: 50px;
+}
+
 /* ── Counter / Stats Strip ── */
 .stats-strip {
   background: var(--primary);
@@ -1269,6 +1771,107 @@ img { max-width: 100%; }
   max-width: 600px;
 }
 
+/* Wave overlay pinned to a section's bottom edge — used on gradient
+   backgrounds (e.g. .project-hero) where a separate divider strip
+   couldn't match the section's color at the seam */
+.section-wave-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  line-height: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.section-wave-bottom svg {
+  display: block;
+  width: 100%;
+}
+
+/* Accent variant of .tech-pill for dark hero backgrounds */
+.tech-pill--accent {
+  background: rgba(45, 212, 191, 0.12);
+  border-color: rgba(45, 212, 191, 0.3);
+  color: var(--accent);
+}
+
+.tech-pill--accent i { color: var(--accent); }
+
+.tech-pill--accent:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--primary);
+}
+
+.tech-pill--accent:hover i { color: var(--primary); }
+
+/* Key-features grid inside detail cards */
+.feature-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.feature-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: linear-gradient(150deg, var(--accent), var(--accent-dim));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.feature-icon i {
+  color: var(--primary);
+  font-size: 1.05rem;
+}
+
+.feature-item:hover .feature-icon {
+  transform: rotate(10deg) scale(1.1);
+}
+
+.feature-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.feature-text {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Spec rows in the "Project Details" side card */
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.spec-row:last-child { border-bottom: none; }
+
+.spec-row dt {
+  font-weight: 600;
+  color: var(--primary);
+  white-space: nowrap;
+}
+
+.spec-row dd {
+  margin: 0;
+  text-align: right;
+}
+
 .back-link {
   display: inline-flex;
   align-items: center;
@@ -1304,6 +1907,97 @@ img { max-width: 100%; }
   width: 100%;
   height: 480px;
   object-fit: cover;
+}
+
+/* ── Project hero icon scene ──
+   Reusable "floating app icon" treatment for project-hero pages: a real
+   product screenshot/logo crop floats and glows, while the outer scene
+   picks up the shared cursor-tilt engine (data-tilt sets --rx/--ry). Float
+   and tilt live on different elements so their transforms don't collide.
+   --pi-glow sets the accent color per project (defaults to site teal). */
+.project-icon-scene {
+  perspective: 900px;
+  display: flex;
+  justify-content: flex-end;
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  will-change: transform;
+}
+
+.project-icon-card {
+  position: relative;
+  width: 210px;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.5),
+              0 0 44px var(--pi-glow, rgba(45, 212, 191, 0.3));
+  animation: projectIconFloat 6s ease-in-out infinite;
+}
+
+@keyframes projectIconFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-16px); }
+}
+
+.project-icon-card img {
+  width: 100%;
+  display: block;
+}
+
+.project-icon-glow {
+  position: absolute;
+  left: 50%;
+  bottom: -18px;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 46px;
+  background: radial-gradient(ellipse at center, var(--pi-glow, rgba(45, 212, 191, 0.45)), transparent 72%);
+  filter: blur(10px);
+  animation: projectIconGlow 3.4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes projectIconGlow {
+  0%, 100% { opacity: 0.5; }
+  50%      { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-icon-card { animation: none; }
+  .project-icon-glow { animation: none; opacity: 0.7; }
+}
+
+/* ── Live deployment badge ── */
+.live-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #4ADE80;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ADE80;
+  flex-shrink: 0;
+  animation: liveDotPulse 1.8s ease-out infinite;
+}
+
+@keyframes liveDotPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.55); }
+  70%  { box-shadow: 0 0 0 8px rgba(74, 222, 128, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-dot { animation: none; }
 }
 
 .project-detail-section {
@@ -1622,6 +2316,44 @@ img { max-width: 100%; }
   pointer-events: none;
 }
 
+/* ── Back to Top ── */
+.back-top {
+  position: fixed;
+  bottom: 26px;
+  right: 26px;
+  z-index: 950;
+  width: 46px;
+  height: 50px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(18px);
+  pointer-events: none;
+  transition: var(--transition);
+}
+
+.back-top i {
+  color: var(--primary);
+  font-size: 1.15rem;
+  transition: var(--transition);
+}
+
+.back-top--show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.back-top:hover {
+  background: var(--primary);
+  transform: translateY(-4px);
+}
+
+.back-top:hover i { color: var(--accent); }
+
 /* ── Business Card Modal ── */
 .bc-modal-overlay {
   position: fixed;
@@ -1747,6 +2479,479 @@ img { max-width: 100%; }
 @media (max-width: 576px) {
   .hero-headline { letter-spacing: -0.02em; }
   .btn-verpto-primary { width: 100%; text-align: center; }
+  .navbar-verpto .brand-logo { height: 46px; }
+  .back-top { bottom: 20px; right: 18px; }
+}
+
+/* ════════════════════════════════════════════════
+   LAMBO 2026 CHAMPIONS — achievement showcase
+   Gold accents + trophy stage + victory reel.
+════════════════════════════════════════════════ */
+
+:root {
+  --gold:      #F6C560;
+  --gold-dim:  #D9A53F;
+  --lime:      #A3E635;
+}
+
+/* ── Homepage featured card upgrades ── */
+.ach-badge--gold {
+  color: var(--gold);
+  background: rgba(246, 197, 96, 0.1);
+  border-color: rgba(246, 197, 96, 0.4);
+}
+
+.ach-badge--gold i { font-size: 0.7rem; }
+
+.ach-medal--gold {
+  background: linear-gradient(150deg, var(--gold), var(--gold-dim));
+}
+
+/* Media slot with a real photo in it: solid frame, photo zoom on hover */
+.ach-media--filled {
+  border: 1px solid rgba(45, 212, 191, 0.25);
+}
+
+.ach-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.ach-card--link:hover .ach-photo { transform: scale(1.05); }
+
+.ach-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.ach-cta i { transition: transform 0.3s ease; }
+.ach-card--link:hover .ach-cta i { transform: translateX(6px); }
+
+/* ── Championship hero ── */
+.lambo-hero {
+  background: linear-gradient(160deg, #16202b 0%, var(--primary) 45%, #101820 100%);
+  padding: 120px 0 110px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Same dotted-grid language as the Trophy Vault */
+.lambo-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(45, 212, 191, 0.05) 1px, transparent 1px);
+  background-size: 36px 36px;
+  pointer-events: none;
+}
+
+/* Soft radial stage-light behind the trophy column */
+.lambo-hero::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: -10%;
+  width: 55%;
+  height: 80%;
+  background: radial-gradient(ellipse at center,
+              rgba(163, 230, 53, 0.10), rgba(45, 212, 191, 0.06) 45%, transparent 70%);
+  pointer-events: none;
+}
+
+.lambo-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: clamp(3rem, 7vw, 4.8rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin: 14px 0 22px;
+}
+
+.lambo-title-top {
+  display: block;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 800;
+  letter-spacing: 0.42em;
+  margin-bottom: 6px;
+  background: linear-gradient(90deg, var(--gold), var(--accent) 70%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.lambo-stat-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.lambo-vdivider {
+  width: 1px;
+  align-self: stretch;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.tech-pill--gold {
+  background: rgba(246, 197, 96, 0.12) !important;
+  border-color: rgba(246, 197, 96, 0.45) !important;
+  color: var(--gold) !important;
+}
+
+/* ── Confetti (pure CSS; frozen by the reduced-motion block) ── */
+.lambo-confetti {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.lambo-confetti span {
+  position: absolute;
+  top: -24px;
+  width: 8px;
+  height: 13px;
+  border-radius: 2px;
+  opacity: 0;
+  animation: confettiFall 9s linear infinite;
+}
+
+@keyframes confettiFall {
+  0%   { transform: translateY(-4vh) rotate(0deg) rotateY(0deg); opacity: 0; }
+  6%   { opacity: 0.75; }
+  90%  { opacity: 0.55; }
+  100% { transform: translateY(108vh) rotate(360deg) rotateY(540deg); opacity: 0; }
+}
+
+.lambo-confetti span:nth-child(1)  { left: 4%;  background: var(--accent);   animation-duration: 10s;  animation-delay: 0s; }
+.lambo-confetti span:nth-child(2)  { left: 12%; background: var(--gold);     animation-duration: 8.2s; animation-delay: 2.1s; }
+.lambo-confetti span:nth-child(3)  { left: 21%; background: var(--lime);     animation-duration: 11s;  animation-delay: 0.8s; }
+.lambo-confetti span:nth-child(4)  { left: 28%; background: rgba(255,255,255,0.7); animation-duration: 9s; animation-delay: 3.4s; }
+.lambo-confetti span:nth-child(5)  { left: 36%; background: var(--gold);     animation-duration: 12s;  animation-delay: 1.4s; }
+.lambo-confetti span:nth-child(6)  { left: 44%; background: var(--accent);   animation-duration: 8.6s; animation-delay: 4.6s; }
+.lambo-confetti span:nth-child(7)  { left: 52%; background: var(--lime);     animation-duration: 10.4s; animation-delay: 0.2s; }
+.lambo-confetti span:nth-child(8)  { left: 59%; background: rgba(255,255,255,0.7); animation-duration: 9.4s; animation-delay: 2.8s; }
+.lambo-confetti span:nth-child(9)  { left: 66%; background: var(--gold);     animation-duration: 11.6s; animation-delay: 1.9s; }
+.lambo-confetti span:nth-child(10) { left: 73%; background: var(--accent);   animation-duration: 8.8s;  animation-delay: 3.9s; }
+.lambo-confetti span:nth-child(11) { left: 80%; background: var(--lime);     animation-duration: 10.8s; animation-delay: 0.5s; }
+.lambo-confetti span:nth-child(12) { left: 86%; background: var(--gold);     animation-duration: 9.8s;  animation-delay: 2.4s; }
+.lambo-confetti span:nth-child(13) { left: 92%; background: rgba(255,255,255,0.7); animation-duration: 12.4s; animation-delay: 4.2s; }
+.lambo-confetti span:nth-child(14) { left: 97%; background: var(--accent);   animation-duration: 9.2s;  animation-delay: 1.1s; }
+
+/* ── Trophy stage ── */
+.trophy-scene {
+  perspective: 900px;
+  text-align: center;
+}
+
+.trophy-stage {
+  position: relative;
+  display: inline-block;
+  padding: 20px 40px 0;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  will-change: transform;
+}
+
+.trophy-img {
+  position: relative;
+  z-index: 2;
+  height: clamp(300px, 44vh, 440px);
+  width: auto;
+  transform: translateZ(50px);
+  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.55))
+          drop-shadow(0 0 34px rgba(163, 230, 53, 0.28));
+  animation: trophyFloat 6s ease-in-out infinite;
+}
+
+@keyframes trophyFloat {
+  0%, 100% { transform: translateZ(50px) translateY(0); }
+  50%      { transform: translateZ(50px) translateY(-14px); }
+}
+
+/* Spinning dashed halo behind the crystal */
+.trophy-ring {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: min(340px, 78vw);
+  height: min(340px, 78vw);
+  border: 1.5px dashed rgba(45, 212, 191, 0.35);
+  border-radius: 50%;
+  animation: trophySpin 26s linear infinite;
+}
+
+.trophy-ring::after {
+  content: '';
+  position: absolute;
+  inset: 22px;
+  border: 1px solid rgba(246, 197, 96, 0.18);
+  border-radius: 50%;
+}
+
+@keyframes trophySpin {
+  to { transform: rotate(360deg); }
+}
+
+/* Glow pool under the base */
+.trophy-glow {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75%;
+  height: 60px;
+  background: radial-gradient(ellipse at center,
+              rgba(163, 230, 53, 0.35), rgba(45, 212, 191, 0.18) 45%, transparent 72%);
+  filter: blur(10px);
+  animation: trophyGlowPulse 3.4s ease-in-out infinite;
+}
+
+@keyframes trophyGlowPulse {
+  0%, 100% { opacity: 0.55; }
+  50%      { opacity: 1; }
+}
+
+/* Cursor-tracked glint (driven by --mx/--my from the tilt engine) */
+.trophy-shine {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: radial-gradient(220px circle at var(--mx, 50%) var(--my, 35%),
+              rgba(255, 255, 255, 0.12), transparent 60%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.trophy-caption {
+  font-family: 'Consolas', 'SF Mono', monospace;
+  font-size: 0.78rem;
+  color: rgba(45, 212, 191, 0.6);
+  letter-spacing: 0.04em;
+  margin: 26px 0 0;
+}
+
+/* ── Victory reel captions ── */
+.gallery-slide {
+  position: relative;
+  background: #0d1117;
+}
+
+/* Outranks the generic .browser-frame-wrap .carousel-item img rule so the
+   per-slide inline object-position (tuned per photo) actually applies. */
+.browser-frame-wrap .carousel-item .gallery-slide img {
+  height: 580px;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 768px) {
+  .browser-frame-wrap .carousel-item .gallery-slide img { height: 240px; }
+}
+
+.gallery-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 56px 22px 18px;
+  background: linear-gradient(180deg, transparent, rgba(13, 17, 23, 0.55) 40%, rgba(13, 17, 23, 0.92));
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.gallery-caption-tag {
+  display: block;
+  font-family: 'Consolas', 'SF Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+/* ── Final standings podium ── */
+.podium-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 100%;
+  padding: 16px 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(26, 37, 48, 0.1);
+  background: rgba(26, 37, 48, 0.03);
+}
+
+.podium-item--gold {
+  border-color: rgba(217, 165, 63, 0.45);
+  background: linear-gradient(135deg, rgba(246, 197, 96, 0.14), rgba(246, 197, 96, 0.04));
+  box-shadow: 0 10px 30px rgba(217, 165, 63, 0.15);
+}
+
+.podium-item--silver { border-color: rgba(148, 163, 178, 0.5); background: rgba(148, 163, 178, 0.08); }
+.podium-item--bronze { border-color: rgba(196, 132, 82, 0.45); background: rgba(196, 132, 82, 0.08); }
+
+.podium-medal {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 1rem;
+  color: var(--primary);
+  background: linear-gradient(150deg, #cfd8e3, #9aa8b8);
+}
+
+.podium-item--gold .podium-medal   { background: linear-gradient(150deg, var(--gold), var(--gold-dim)); }
+.podium-item--bronze .podium-medal { background: linear-gradient(150deg, #d9a374, #b0743f); }
+
+.podium-team {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 0.92rem;
+  color: var(--primary);
+}
+
+.podium-detail {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.podium-icon {
+  margin-left: auto;
+  color: var(--gold-dim);
+  font-size: 1.2rem;
+}
+
+.podium-note {
+  font-family: 'Consolas', 'SF Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--accent-dim);
+  letter-spacing: 0.04em;
+}
+
+/* ── PSITE Innovation Challenge variant (red / blue / gold crystal) ── */
+:root {
+  --psite-blue: #60A5FA;
+  --psite-red:  #F87171;
+}
+
+/* Stage-light behind the trophy shifts to the PSITE palette */
+.lambo-hero--psite::after {
+  background: radial-gradient(ellipse at center,
+              rgba(96, 165, 250, 0.12), rgba(248, 113, 113, 0.07) 45%, transparent 70%);
+}
+
+/* Tricolor headline echoing the PSITE sun logo */
+.lambo-title-top--psite {
+  background: linear-gradient(90deg, var(--gold), var(--psite-blue) 55%, var(--psite-red));
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.trophy-img--psite {
+  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.55))
+          drop-shadow(0 0 34px rgba(96, 165, 250, 0.35));
+}
+
+.trophy-ring--psite { border-color: rgba(96, 165, 250, 0.4); }
+.trophy-ring--psite::after { border-color: rgba(248, 113, 113, 0.22); }
+
+.trophy-glow--psite {
+  background: radial-gradient(ellipse at center,
+              rgba(96, 165, 250, 0.4), rgba(248, 113, 113, 0.16) 45%, transparent 72%);
+}
+
+/* Recolor part of the confetti to the PSITE palette */
+.lambo-confetti--psite span:nth-child(3n)   { background: var(--psite-blue); }
+.lambo-confetti--psite span:nth-child(3n+1) { background: var(--psite-red); }
+
+/* ── UC ICT Congress variant (emerald jade crystal + gold) ── */
+:root {
+  --ict-green: #22C55E;
+  --ict-jade:  #4ADE80;
+}
+
+/* Stage-light behind the trophy shifts to emerald */
+.lambo-hero--ict::after {
+  background: radial-gradient(ellipse at center,
+              rgba(34, 197, 94, 0.14), rgba(163, 230, 53, 0.07) 45%, transparent 70%);
+}
+
+/* Jade → lime headline, echoing the green crystal trophy */
+.lambo-title-top--ict {
+  background: linear-gradient(90deg, var(--ict-jade), var(--lime) 60%, var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.trophy-img--ict {
+  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.55))
+          drop-shadow(0 0 36px rgba(34, 197, 94, 0.42));
+}
+
+.trophy-ring--ict { border-color: rgba(34, 197, 94, 0.42); }
+.trophy-ring--ict::after { border-color: rgba(163, 230, 53, 0.22); }
+
+.trophy-glow--ict {
+  background: radial-gradient(ellipse at center,
+              rgba(34, 197, 94, 0.45), rgba(163, 230, 53, 0.18) 45%, transparent 72%);
+}
+
+/* Recolor part of the confetti to the emerald palette */
+.lambo-confetti--ict span:nth-child(3n)   { background: var(--ict-green); }
+.lambo-confetti--ict span:nth-child(3n+1) { background: var(--lime); }
+
+/* ── Finalist list rows (sidebar) ── */
+.finalist-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(26, 37, 48, 0.1);
+  background: rgba(26, 37, 48, 0.03);
+}
+
+.finalist-row--champ {
+  border-color: rgba(217, 165, 63, 0.45);
+  background: linear-gradient(135deg, rgba(246, 197, 96, 0.14), rgba(246, 197, 96, 0.04));
+  box-shadow: 0 8px 24px rgba(217, 165, 63, 0.14);
+}
+
+.finalist-row .podium-team { font-size: 0.86rem; }
+.finalist-row .podium-detail { font-size: 0.74rem; }
+.finalist-row .podium-medal { width: 32px; height: 32px; font-size: 0.9rem; }
+.finalist-row--champ .podium-medal {
+  background: linear-gradient(150deg, var(--gold), var(--gold-dim));
+}
+
+@media (max-width: 991.98px) {
+  .lambo-hero { padding: 104px 0 90px; }
+  .trophy-img { height: clamp(260px, 38vh, 360px); }
 }
 
 /* ── Reduced Motion ── */
@@ -1763,4 +2968,6 @@ img { max-width: 100%; }
     opacity: 1;
     transform: none;
   }
+
+  .lambo-confetti { display: none; }
 }
